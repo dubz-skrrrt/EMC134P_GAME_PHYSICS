@@ -53,7 +53,8 @@ public class BlinkingText : MonoBehaviour
             yield return new WaitForSeconds(1f);
             text = GetComponent<Text>();
             text.color = Color.red;
-            text.text= "ERROR";
+            text.text= "UNBALANCED FORCE DETECTED";
+            text.fontSize = 30;
             yield return new WaitForSeconds(1f);
         }
     }
