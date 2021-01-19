@@ -8,6 +8,7 @@ public class BlinkingText : MonoBehaviour
     Text text;
 
     public GameObject movingCar;
+    bool once;
     public bool startBlinking;
     void Start()
     {
@@ -22,8 +23,12 @@ public class BlinkingText : MonoBehaviour
 
     void Update(){
         Debug.Log(movingCar.GetComponent<NewtonLaw_movement>().NetForceTrue);
-        
-        FlashingText();
+        if (!once)
+        {
+            FlashingText();
+            once = true;
+        }
+       
         // if (startBlinking == true){
         //     FlashingText();
         //     startBlinking = false;
