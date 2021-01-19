@@ -28,11 +28,6 @@ public class BlinkingText : MonoBehaviour
             FlashingText();
             once = true;
         }
-       
-        // if (startBlinking == true){
-        //     FlashingText();
-        //     startBlinking = false;
-        // }
     }
 
 
@@ -56,7 +51,8 @@ public class BlinkingText : MonoBehaviour
             text.text= "";
             
             yield return new WaitForSeconds(1f);
-            
+            text = GetComponent<Text>();
+            text.color = Color.red;
             text.text= "ERROR";
             yield return new WaitForSeconds(1f);
         }
@@ -66,9 +62,9 @@ public class BlinkingText : MonoBehaviour
     {
         while(true){
            
-            // text.text= "";
+            text.text= "";
             
-            // yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f);
             
             text = GetComponent<Text>();
             text.color = Color.green;

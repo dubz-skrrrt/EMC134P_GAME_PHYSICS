@@ -186,10 +186,10 @@ RectTransform:
   m_Father: {fileID: 1173417546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 66, y: -51}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -123, y: 74}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612002460
 MonoBehaviour:
@@ -213,7 +213,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 3
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movingCar: {fileID: 0}
+  startBlinking: 0
 --- !u!23 &698636205 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7440581414783030290, guid: 6609bdd3bfe3dc244aab1cd9f7aa4fee, type: 3}
@@ -371,7 +372,7 @@ MonoBehaviour:
   forceList:
   - {x: 0, y: 2, z: 2}
   - {x: 0, y: 2, z: 4}
-  - {x: 0, y: -2, z: 0}
+  - {x: 0, y: -2, z: -2}
   - {x: 0, y: -2, z: -4}
 --- !u!114 &887427338
 MonoBehaviour:
