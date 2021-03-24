@@ -46,7 +46,7 @@ public class ShootingBall : MonoBehaviour
             baller.GetComponent<Rigidbody>().AddForce(throwDirection.normalized * throwForce);
         }
 
-        if (baller != null && ballPos.transform.position.y < 6)
+        if (baller != null && ballPos.transform.position.y < 30 && !holdBall)
         {
             resetTimer -= Time.deltaTime;
             if(resetTimer <= 0f){
@@ -68,12 +68,12 @@ public class ShootingBall : MonoBehaviour
     void MovePwrBar(){
         if(!shootPress){
             if(pwrSlider.value < 1 && slideRight){
-            pwrSlider.value += 0.002f;
+            pwrSlider.value += 0.005f;
             }
             else{
                 slideRight = false;
-                pwrSlider.value -= 0.002f;
-                if(pwrSlider.value <= 0){
+                pwrSlider.value -= 0.005f;
+                if(pwrSlider.value <= 0.001f){
                     slideRight = true;
                 }
             }
