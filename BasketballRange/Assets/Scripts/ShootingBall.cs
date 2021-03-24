@@ -7,7 +7,7 @@ public class ShootingBall : MonoBehaviour
 {
     public GameObject ball;
     private GameObject baller;
-    private Vector3 throwDirection = new Vector3(0, 140, 70);
+    private Vector3 throwDirection = new Vector3(0, 140, 100);
     private Vector3 startPos;
     [HideInInspector]
     public Vector3 curPos;
@@ -19,6 +19,7 @@ public class ShootingBall : MonoBehaviour
     public float defaultThrowForce;
     public float throwForce;
     public Scoring curScore;
+    public ScoreChecker SC;
 
     private bool holdBall = true;
     private bool shootPress = false;
@@ -30,14 +31,15 @@ public class ShootingBall : MonoBehaviour
         startPos = ball.transform.position;
         curPos = startPos;
         curScore = GameObject.FindGameObjectWithTag("Scorer").GetComponent<Scoring>();
+        SC = GameObject.Find("Under").GetComponent<ScoreChecker>();
         pwrSlider = GameObject.FindGameObjectWithTag("powerSlider").GetComponent<Slider>();
         SpawnBall();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         MovePwrBar();
-        
+        Debug.Log(SC.underBasket);
         if (holdBall && shootPress)
         {
             ballPos.transform.position = baller.transform.position;
@@ -51,7 +53,7 @@ public class ShootingBall : MonoBehaviour
             resetTimer -= Time.deltaTime;
             if(resetTimer <= 0f){
                 ResetBall();
-                resetTimer = 2f;
+                resetTimer = 1f;
             }
         }
     }
@@ -68,12 +70,12 @@ public class ShootingBall : MonoBehaviour
     void MovePwrBar(){
         if(!shootPress){
             if(pwrSlider.value < 1 && slideRight){
-            pwrSlider.value += 0.005f;
+            pwrSlider.value += 0.02f;
             }
             else{
                 slideRight = false;
-                pwrSlider.value -= 0.005f;
-                if(pwrSlider.value <= 0.001f){
+                pwrSlider.value -= 0.02f;
+                if(pwrSlider.value <= 0){
                     slideRight = true;
                 }
             }
@@ -89,27 +91,28 @@ public class ShootingBall : MonoBehaviour
         pwrSlider.value = 0f;
         slideRight = true;
         curScore.isScored = false;
+        SC.underBasket = false;
         SpawnBall();
     }
     void DifficultyChange()
     {
         if (curScore.score == 1){
             curPos = new Vector3(ball.transform.position.x, ball.transform.position.y, ball.transform.position.z-80);
-            defaultThrowForce = 10500f;
+            defaultThrowForce = 16500f;
         }else if(curScore.score == 2){
             curPos = new Vector3(ball.transform.position.x, ball.transform.position.y, ball.transform.position.z-140);
-            defaultThrowForce = 11000f;
+            defaultThrowForce = 17500f;
 
         }else if(curScore.score == 3){
             curPos = new Vector3(ball.transform.position.x, ball.transform.position.y, ball.transform.position.z-240);
-            defaultThrowForce = 12000f;
+            defaultThrowForce = 18500f;
 
         }else if(curScore.score == 4){
             curPos = new Vector3(ball.transform.position.x, ball.transform.position.y, ball.transform.position.z-360);
-            defaultThrowForce = 13000f;
+            defaultThrowForce = 20000f;
         }else{
             curPos = new Vector3(ball.transform.position.x, ball.transform.position.y, ball.transform.position.z);
-            defaultThrowForce = 10000f;
+            defaultThrowForce = 15000f;
         }
         curScore.Positioning();
     }
