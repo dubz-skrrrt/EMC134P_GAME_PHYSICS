@@ -35,11 +35,6 @@ public class Scoring : MonoBehaviour
         Positioning();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(isScored);
-    }
 
     void OnTriggerExit(Collider other) {
        
@@ -55,9 +50,7 @@ public class Scoring : MonoBehaviour
 
     public void Positioning()
     {
-        // shooting = GameObject.FindGameObjectWithTag("GM").GetComponent<ShootingBall>();
-        //Debug.Log(shooting.ball.transform.position.z);
-        UI.transform.position = shooting.curPos + offset;//new Vector3(0, 48, shooting.ball.transform.position.z+28);
+        UI.transform.position = shooting.curPos + offset;
         mainCamera.transform.position = shooting.curPos - camOffset;
     }
 }

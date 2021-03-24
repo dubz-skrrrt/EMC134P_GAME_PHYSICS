@@ -8,12 +8,13 @@ public class ShootingBall : MonoBehaviour
 {
     public GameObject ball;
     private GameObject baller;
-    private Vector3 throwDirection = new Vector3(0, 140, 100);
+    private Vector3 throwDirection = new Vector3(0, 140, 70);
     private Vector3 startPos;
     [HideInInspector]
     public Vector3 curPos;
     private bool isWinner;
-    private bool isPaused = false;
+    [HideInInspector]
+    public bool isPaused = false;
 
     private Slider pwrSlider;
     private bool slideRight = true;
@@ -33,7 +34,6 @@ public class ShootingBall : MonoBehaviour
         startPos = ball.transform.position;
         curPos = startPos;
         curScore = GameObject.FindGameObjectWithTag("Scorer").GetComponent<Scoring>();
-        //SC = GameObject.Find("Under").GetComponent<ScoreChecker>();
         pwrSlider = GameObject.FindGameObjectWithTag("powerSlider").GetComponent<Slider>();
         SpawnBall();
     }
@@ -52,14 +52,11 @@ public class ShootingBall : MonoBehaviour
     void Update(){ //General Updates
         MovePwrBar();
 
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            PauseGame();
-        }
-
         if (baller != null && ballPos.transform.position.y < 35 && !holdBall){
             resetTimer -= Time.deltaTime;
+            
             if(resetTimer <= 0f){
-                CheckAttempts();
+                
                 ResetBall();
                 resetTimer = 1f;
             }
@@ -67,6 +64,7 @@ public class ShootingBall : MonoBehaviour
     }
 
     void SpawnBall(){
+        CheckAttempts();
         DifficultyChange();
         baller = Instantiate(ball, curPos, ball.transform.rotation) as GameObject;
         baller.name = "Baller";
@@ -78,11 +76,11 @@ public class ShootingBall : MonoBehaviour
     void MovePwrBar(){
         if(!shootPress && !isPaused){
             if(pwrSlider.value < 1 && slideRight){
-            pwrSlider.value += 0.01f;
+            pwrSlider.value += 0.001f;
             }
             else{
                 slideRight = false;
-                pwrSlider.value -= 0.01f;
+                pwrSlider.value -= 0.001f;
                 if(pwrSlider.value <= 0){
                     slideRight = true;
                 }
@@ -93,13 +91,9 @@ public class ShootingBall : MonoBehaviour
     void CheckAttempts(){
         if(!curScore.isScored){
             if(curScore.lives > 0){
-                if(curScore.lives > 4){
+                if(curScore.score == 5){
                     isWinner = true;
                     SceneManager.LoadScene("EndMenu");
-                }
-                else{
-                    curScore.lives--;
-                    curScore.livesText.text = curScore.lives.ToString();
                 }
             }
             else{
@@ -155,16 +149,6 @@ public class ShootingBall : MonoBehaviour
         }
     }
 
-    void PauseGame(){
-        if(isPaused){
-            isPaused = false;
-            Time.timeScale = 1;
-        }
-        else{
-            isPaused = true;
-            Time.timeScale = 0;
-        }
-    }
 
     public void FinalForce()
     {

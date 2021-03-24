@@ -8,6 +8,7 @@ public class MenuScript : MonoBehaviour
 {
     private int endCondition;
     private Text headerText;
+    public SceneFader SF;
 
     void Start(){
         headerText = GameObject.FindGameObjectWithTag("menuHeader").GetComponent<Text>();
@@ -18,10 +19,11 @@ public class MenuScript : MonoBehaviour
         else{
             headerText.text = "GAME OVER!";
         }
+
     }
 
     public void PlayGame(){
-        SceneManager.LoadScene("MainGame");
+        SF.FadeToScene("MainGame");
     }
 
     public void QuitGame(){
