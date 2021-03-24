@@ -53,12 +53,12 @@ public class ShootingBall : MonoBehaviour
             resetTimer -= Time.deltaTime;
             if(resetTimer <= 0f){
                 if(!curScore.isScored){
-                    if(curScore.lives < 0){
-                        //GAME OVER (work in progress)
-                    }
-                    else{
+                    if(curScore.lives >= 0){
                         curScore.lives--;
                         curScore.livesText.text = curScore.lives.ToString();
+                    }
+                    else{
+                        //GAME OVER (work in progress)
                     }
                 }
                 ResetBall();
