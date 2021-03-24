@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ShootingBall : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class ShootingBall : MonoBehaviour
     [HideInInspector]
     public Vector3 curPos;
     private Vector3 forceSpeed;
+    private bool isWinner;
 
     private Slider pwrSlider;
     private bool slideRight = true;
@@ -53,12 +55,19 @@ public class ShootingBall : MonoBehaviour
             resetTimer -= Time.deltaTime;
             if(resetTimer <= 0f){
                 if(!curScore.isScored){
-                    if(curScore.lives >= 0){
-                        curScore.lives--;
-                        curScore.livesText.text = curScore.lives.ToString();
+                    if(curScore.lives > 0){
+                        if(curScore.lives > 4){
+                            isWinner = true;
+                            SceneManager.LoadScene("EndMenu");
+                        }
+                        else{
+                            curScore.lives--;
+                            curScore.livesText.text = curScore.lives.ToString();
+                        }
                     }
                     else{
-                        //GAME OVER (work in progress)
+                        isWinner = false;
+                        SceneManager.LoadScene("EndMenu");
                     }
                 }
                 ResetBall();
@@ -125,6 +134,16 @@ public class ShootingBall : MonoBehaviour
             defaultThrowForce = 15000f;
         }
         curScore.Positioning();
+    }
+
+    void OnDisable()
+    {
+        if(isWinner){
+            PlayerPrefs.SetInt("endCondition", 1);
+        }
+        else{
+            PlayerPrefs.SetInt("endCondition", 0);
+        }
     }
 
     public void FinalForce()

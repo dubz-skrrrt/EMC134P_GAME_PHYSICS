@@ -10,6 +10,7 @@ TagManager:
   - IGUI
   - GM
   - livesTxt
+  - menuHeader
   layers:
   - Default
   - TransparentFX
