@@ -42,14 +42,16 @@ public class Scoring : MonoBehaviour
     }
 
     void OnTriggerExit(Collider other) {
-        Debug.Log(other.gameObject.name);
-        if(other.gameObject.name == "Baller" && isScored == false){
+       
+        if(other.gameObject.name == "Baller" && isScored == false && shooting.SC.underBasket == false){
             Debug.Log("score!");
             score++;
             isScored = true;
             scoreText.text = "Score: " + score;
         }
     }
+
+
 
     public void Positioning()
     {
