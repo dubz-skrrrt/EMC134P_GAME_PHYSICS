@@ -12,8 +12,8 @@ public class ShootingBall : MonoBehaviour
     private Vector3 startPos;
     [HideInInspector]
     public Vector3 curPos;
-    private Vector3 forceSpeed;
     private bool isWinner;
+    private bool isPaused = false;
 
     private Slider pwrSlider;
     private bool slideRight = true;
@@ -40,7 +40,7 @@ public class ShootingBall : MonoBehaviour
 
     void FixedUpdate() //Physics Updates
     {
-        if (holdBall && shootPress)
+        if (holdBall && shootPress && !isPaused)
         {
             ballPos.transform.position = baller.transform.position;
             holdBall = false;
@@ -51,6 +51,10 @@ public class ShootingBall : MonoBehaviour
 
     void Update(){ //General Updates
         MovePwrBar();
+
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            PauseGame();
+        }
 
         if (baller != null && ballPos.transform.position.y < 35 && !holdBall){
             resetTimer -= Time.deltaTime;
@@ -72,7 +76,7 @@ public class ShootingBall : MonoBehaviour
     }
 
     void MovePwrBar(){
-        if(!shootPress){
+        if(!shootPress && !isPaused){
             if(pwrSlider.value < 1 && slideRight){
             pwrSlider.value += 0.01f;
             }
@@ -151,10 +155,23 @@ public class ShootingBall : MonoBehaviour
         }
     }
 
+    void PauseGame(){
+        if(isPaused){
+            isPaused = false;
+            Time.timeScale = 1;
+        }
+        else{
+            isPaused = true;
+            Time.timeScale = 0;
+        }
+    }
+
     public void FinalForce()
     {
-        throwForce = defaultThrowForce * pwrSlider.value;
-        shootPress = true;
+        if(!isPaused){
+            throwForce = defaultThrowForce * pwrSlider.value;
+            shootPress = true;
+        }
     }
 
     
