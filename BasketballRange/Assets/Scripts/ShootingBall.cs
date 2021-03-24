@@ -31,7 +31,7 @@ public class ShootingBall : MonoBehaviour
         startPos = ball.transform.position;
         curPos = startPos;
         curScore = GameObject.FindGameObjectWithTag("Scorer").GetComponent<Scoring>();
-        SC = GameObject.Find("Under").GetComponent<ScoreChecker>();
+        //SC = GameObject.Find("Under").GetComponent<ScoreChecker>();
         pwrSlider = GameObject.FindGameObjectWithTag("powerSlider").GetComponent<Slider>();
         SpawnBall();
     }
@@ -39,7 +39,7 @@ public class ShootingBall : MonoBehaviour
     void FixedUpdate()
     {
         MovePwrBar();
-        Debug.Log(SC.underBasket);
+        //Debug.Log(curScore.isScored);
         if (holdBall && shootPress)
         {
             ballPos.transform.position = baller.transform.position;
