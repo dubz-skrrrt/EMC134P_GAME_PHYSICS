@@ -38,10 +38,8 @@ public class ShootingBall : MonoBehaviour
         SpawnBall();
     }
 
-    void FixedUpdate()
+    void FixedUpdate() //Physics Updates
     {
-        MovePwrBar();
-        //Debug.Log(curScore.isScored);
         if (holdBall && shootPress)
         {
             ballPos.transform.position = baller.transform.position;
@@ -49,27 +47,15 @@ public class ShootingBall : MonoBehaviour
             baller.GetComponent<Rigidbody>().useGravity = true;   //reapply gravity once the player has released the ball
             baller.GetComponent<Rigidbody>().AddForce(throwDirection.normalized * throwForce);
         }
+    }
 
-        if (baller != null && ballPos.transform.position.y < 35 && !holdBall)
-        {
+    void Update(){ //General Updates
+        MovePwrBar();
+
+        if (baller != null && ballPos.transform.position.y < 35 && !holdBall){
             resetTimer -= Time.deltaTime;
             if(resetTimer <= 0f){
-                if(!curScore.isScored){
-                    if(curScore.lives > 0){
-                        if(curScore.lives > 4){
-                            isWinner = true;
-                            SceneManager.LoadScene("EndMenu");
-                        }
-                        else{
-                            curScore.lives--;
-                            curScore.livesText.text = curScore.lives.ToString();
-                        }
-                    }
-                    else{
-                        isWinner = false;
-                        SceneManager.LoadScene("EndMenu");
-                    }
-                }
+                CheckAttempts();
                 ResetBall();
                 resetTimer = 1f;
             }
@@ -88,14 +74,33 @@ public class ShootingBall : MonoBehaviour
     void MovePwrBar(){
         if(!shootPress){
             if(pwrSlider.value < 1 && slideRight){
-            pwrSlider.value += 0.02f;
+            pwrSlider.value += 0.01f;
             }
             else{
                 slideRight = false;
-                pwrSlider.value -= 0.02f;
+                pwrSlider.value -= 0.01f;
                 if(pwrSlider.value <= 0){
                     slideRight = true;
                 }
+            }
+        }
+    }
+
+    void CheckAttempts(){
+        if(!curScore.isScored){
+            if(curScore.lives > 0){
+                if(curScore.lives > 4){
+                    isWinner = true;
+                    SceneManager.LoadScene("EndMenu");
+                }
+                else{
+                    curScore.lives--;
+                    curScore.livesText.text = curScore.lives.ToString();
+                }
+            }
+            else{
+                isWinner = false;
+                SceneManager.LoadScene("EndMenu");
             }
         }
     }
