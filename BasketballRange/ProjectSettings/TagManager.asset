@@ -9,6 +9,7 @@ TagManager:
   - Scorer
   - IGUI
   - GM
+  - livesTxt
   layers:
   - Default
   - TransparentFX

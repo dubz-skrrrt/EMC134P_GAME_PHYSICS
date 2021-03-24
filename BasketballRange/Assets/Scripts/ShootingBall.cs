@@ -46,10 +46,19 @@ public class ShootingBall : MonoBehaviour
             baller.GetComponent<Rigidbody>().AddForce(throwDirection.normalized * throwForce);
         }
 
-        if (baller != null && ballPos.transform.position.y < 30 && !holdBall)
+        if (baller != null && ballPos.transform.position.y < 35 && !holdBall)
         {
             resetTimer -= Time.deltaTime;
             if(resetTimer <= 0f){
+                if(!curScore.isScored){
+                    if(curScore.lives < 0){
+                        //GAME OVER (work in progress)
+                    }
+                    else{
+                        curScore.lives--;
+                        curScore.livesText.text = curScore.lives.ToString();
+                    }
+                }
                 ResetBall();
                 resetTimer = 2f;
             }
@@ -91,6 +100,7 @@ public class ShootingBall : MonoBehaviour
         curScore.isScored = false;
         SpawnBall();
     }
+
     void DifficultyChange()
     {
         if (curScore.score == 1){
@@ -113,6 +123,7 @@ public class ShootingBall : MonoBehaviour
         }
         curScore.Positioning();
     }
+
     public void FinalForce()
     {
         throwForce = defaultThrowForce * pwrSlider.value;

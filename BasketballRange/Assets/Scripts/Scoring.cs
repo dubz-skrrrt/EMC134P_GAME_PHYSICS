@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class Scoring : MonoBehaviour
 {
-    private Text scoreText;
+    public Text scoreText, livesText;
     private Vector3 offset = new Vector3(0, 40, 20);
     private Vector3 camOffset = new Vector3(0, -70, 140);
+    private ShootingBall gameManager;
+
     public GameObject UI;
     public GameObject mainCamera;
     [HideInInspector]
@@ -15,14 +17,21 @@ public class Scoring : MonoBehaviour
     [HideInInspector]
     public bool isScored = false;
     [HideInInspector]
-    public int score;
+    public int score, lives;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<ShootingBall>();
+
         score = 0;
         scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent<Text>();
         scoreText.text = "Score: " + score;
+
+        lives = 3;
+        livesText = GameObject.FindGameObjectWithTag("livesTxt").GetComponent<Text>();
+        livesText.text = lives.ToString();
+
         Positioning();
     }
 
