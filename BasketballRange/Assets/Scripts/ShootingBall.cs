@@ -23,7 +23,7 @@ public class ShootingBall : MonoBehaviour
     public float throwForce;
     public Scoring curScore;
     public ScoreChecker SC;
-
+    public SoundManager sm;
     private bool holdBall = true;
     private bool shootPress = false;
     private Transform ballPos;
@@ -58,7 +58,7 @@ public class ShootingBall : MonoBehaviour
             if(resetTimer <= 0f){
                 
                 ResetBall();
-                resetTimer = 1f;
+                resetTimer = 2f;
             }
         }
     }
@@ -93,11 +93,14 @@ public class ShootingBall : MonoBehaviour
             if(curScore.lives > 0){
                 if(curScore.score == 5){
                     isWinner = true;
+                    
                     SceneManager.LoadScene("EndMenu");
+                    
                 }
             }
             else{
                 isWinner = false;
+                
                 SceneManager.LoadScene("EndMenu");
             }
         }
@@ -137,6 +140,7 @@ public class ShootingBall : MonoBehaviour
             defaultThrowForce = 15000f;
         }
         curScore.Positioning();
+        SoundManager.PlaySound("difficultyIncrease_sfx");
     }
 
     void OnDisable()
@@ -155,8 +159,8 @@ public class ShootingBall : MonoBehaviour
         if(!isPaused){
             throwForce = defaultThrowForce * pwrSlider.value;
             shootPress = true;
+            SoundManager.PlaySound("throw_sfx");
         }
     }
 
-    
 }

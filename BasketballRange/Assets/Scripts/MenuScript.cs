@@ -15,9 +15,11 @@ public class MenuScript : MonoBehaviour
 
         if(endCondition == 1){
             headerText.text = "YOU WIN!";
+            SoundManager.PlaySound("youWin_dlg");
         }
         else{
             headerText.text = "GAME OVER!";
+            SoundManager.PlaySound("youLose_dlg");
         }
 
     }
