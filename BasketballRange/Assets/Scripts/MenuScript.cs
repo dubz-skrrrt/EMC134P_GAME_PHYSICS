@@ -8,6 +8,7 @@ public class MenuScript : MonoBehaviour
 {
     private int endCondition;
     private Text headerText;
+    public GameObject niceTry;
     public SceneFader SF;
 
     void Start(){
@@ -19,9 +20,10 @@ public class MenuScript : MonoBehaviour
             SoundManager.PlaySound("winGame_sfx");
         }
         else{
-            headerText.text = "GAME OVER!";
+            headerText.text = "";
             SoundManager.PlaySound("youLose_dlg");
             SoundManager.PlaySound("loseGame_sfx");
+            niceTry.SetActive(!niceTry.activeSelf);
         }
 
     }
