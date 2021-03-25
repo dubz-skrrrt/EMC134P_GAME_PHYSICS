@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class isGrounded : MonoBehaviour
 {
-
     public Scoring score;
     public bool grounded = false;
 
-    void OnTriggerEnter(Collider col){
-        SoundManager.PlaySound("bounce_sfx");
+    void OnCollisionEnter(Collision col){
         if (col.gameObject.name == "Baller" && !score.isScored){
-            Debug.Log("ground");
+            SoundManager.PlaySound("bounce_sfx");
             score.lives--;
             score.livesText.text = score.lives.ToString();
             score.isScored = true;
         }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        SoundManager.PlaySound("bounce_sfx");
     }
 }
