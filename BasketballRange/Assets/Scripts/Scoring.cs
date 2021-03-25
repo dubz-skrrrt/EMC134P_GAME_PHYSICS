@@ -41,9 +41,16 @@ public class Scoring : MonoBehaviour
         if(other.gameObject.name == "Baller" && isScored == false && shooting.SC.underBasket == false){
             Debug.Log("score!");
             score++;
+            SoundManager.PlaySound("netSwsih_sfx");
+            SoundManager.PlaySound("pointEarned_sf");
             isScored = true;
             scoreText.text = "Score: " + score;
         }
+    }
+
+    void OnCollisionEnter(Collision col){
+         SoundManager.PlaySound("bounceBackboard_sfx");
+
     }
 
 

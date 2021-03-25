@@ -9,11 +9,12 @@ public class isGrounded : MonoBehaviour
     public bool grounded = false;
 
     void OnTriggerEnter(Collider col){
+        SoundManager.PlaySound("bounce_sfx");
         if (col.gameObject.name == "Baller" && !score.isScored){
+            Debug.Log("ground");
             score.lives--;
             score.livesText.text = score.lives.ToString();
             score.isScored = true;
-            
         }
     }
 }
