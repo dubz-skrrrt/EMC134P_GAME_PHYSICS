@@ -16,19 +16,23 @@ public class MenuScript : MonoBehaviour
         if(endCondition == 1){
             headerText.text = "YOU WIN!";
             SoundManager.PlaySound("youWin_dlg");
+            SoundManager.PlaySound("winGame_sfx");
         }
         else{
             headerText.text = "GAME OVER!";
             SoundManager.PlaySound("youLose_dlg");
+            SoundManager.PlaySound("loseGame_sfx");
         }
 
     }
 
     public void PlayGame(){
+        SoundManager.PlaySound("buttonClick_sfx");
         SF.FadeToScene("MainGame");
     }
 
     public void QuitGame(){
+        SoundManager.PlaySound("buttonClick_sfx");
         Application.Quit();
     }
 

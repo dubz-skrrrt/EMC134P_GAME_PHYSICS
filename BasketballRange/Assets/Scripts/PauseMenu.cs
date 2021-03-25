@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
     public void PauseGame(){
+        SoundManager.PlaySound("buttonClick_sfx");
         pauseUI.SetActive(!pauseUI.activeSelf);
         menubtn.SetActive(!menubtn.activeSelf);
         data.SetActive(!data.activeSelf);
@@ -34,13 +35,16 @@ public class PauseMenu : MonoBehaviour
     public void Retry()
     {
         PauseGame();
+        SoundManager.PlaySound("buttonClick_sfx");
         fader.FadeToScene(SceneManager.GetActiveScene().name);
+        
 
     }
 
     public void Menu()
     {
         PauseGame();
+        SoundManager.PlaySound("buttonClick_sfx");
         fader.FadeToScene("MainMenu");
     }
 }

@@ -160,6 +160,7 @@ public class ShootingBall : MonoBehaviour
             throwForce = defaultThrowForce * pwrSlider.value;
             shootPress = true;
             SoundManager.PlaySound("throw_sfx");
+            SoundManager.PlaySound("buttonClick_sfx");
         }
     }
 
