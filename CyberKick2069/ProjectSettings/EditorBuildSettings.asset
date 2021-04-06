@@ -4,5 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Neon/Scenes/TutorialScene.unity
+    guid: a4c251521ce2ec2499d5db4fd55c1c9f
