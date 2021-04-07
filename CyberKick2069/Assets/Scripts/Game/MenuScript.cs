@@ -14,12 +14,12 @@ public class MenuScript : MonoBehaviour
     }
 
     public void PlayGame(){
-        //SoundManager.PlaySound("buttonClick_sfx");
+        SoundManager.PlaySound("buttonClick_sfx");
         SF.FadeToScene("PlayGame");
     }
 
     public void QuitGame(){
-        //SoundManager.PlaySound("buttonClick_sfx");
+        SoundManager.PlaySound("buttonClick_sfx");
         Application.Quit();
     }
 }

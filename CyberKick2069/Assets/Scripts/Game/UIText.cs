@@ -19,7 +19,7 @@ public class UIText : MonoBehaviour
         //numOfBallsUI.text = "x " + numOfBalls;
     }
 
-    public void AddScore() // increase 1 level
+    public void AddLevel() // increase 1 level
     {
         level++;
         levelText.text = "" + level;
