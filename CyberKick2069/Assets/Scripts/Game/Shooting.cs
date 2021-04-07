@@ -22,6 +22,7 @@ public class Shooting : MonoBehaviour
         spawnScript = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
         rb = GameObject.FindGameObjectWithTag("soccerBall").GetComponent<Rigidbody>();
         shoot = false;
+        shootStart = false;
     }
 
     void Update()
@@ -29,7 +30,7 @@ public class Shooting : MonoBehaviour
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space) && !shootStart && !TimerScript.TimeRunOut){
             shootStart = true;
         }
        
