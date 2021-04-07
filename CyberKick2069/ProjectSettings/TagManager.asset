@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - FillSlider
   - SceneFader
+  - Ring
   layers:
   - Default
   - TransparentFX
