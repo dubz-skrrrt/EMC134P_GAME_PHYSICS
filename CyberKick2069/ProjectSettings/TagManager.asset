@@ -8,6 +8,7 @@ TagManager:
   - soccerBall
   - powerSlider
   - Ground
+  - FillSlider
   layers:
   - Default
   - TransparentFX

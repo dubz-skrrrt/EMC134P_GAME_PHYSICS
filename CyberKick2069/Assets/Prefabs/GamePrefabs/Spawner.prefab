@@ -43,8 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ebc707e84d6c7449cdea3110cc7172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 4328572412691685491, guid: 1c1521ed41713474b97ae1d191af4639, type: 3}
-  soccerBall: {fileID: 514820580000474755, guid: 0bbc88178eb582e4085a5461414cb6fc,
+  arrow: {fileID: 5341463206625430138, guid: 457be49856d6d6245ad3ece703780303, type: 3}
+  soccerBall: {fileID: 8576017353464188369, guid: 0bbc88178eb582e4085a5461414cb6fc,
     type: 3}
   spawnedArrow: {fileID: 0}
   soccerBallClone: {fileID: 0}
+  Player: {fileID: 0}
+  startPlayerPos: {x: 0, y: 0, z: 0}
+  startPlayerRot: {x: 0, y: 0, z: 0, w: 0}
