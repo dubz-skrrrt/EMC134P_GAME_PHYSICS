@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,14 +14,12 @@ public class MenuScript : MonoBehaviour
     }
 
     public void PlayGame(){
-        SoundManager.PlaySound("buttonClick_sfx");
-        SF.FadeToScene("MainGame");
-        ShootingBall.change = false;
+        //SoundManager.PlaySound("buttonClick_sfx");
+        SF.FadeToScene("PlayGame");
     }
 
     public void QuitGame(){
-        SoundManager.PlaySound("buttonClick_sfx");
+        //SoundManager.PlaySound("buttonClick_sfx");
         Application.Quit();
     }
-
 }

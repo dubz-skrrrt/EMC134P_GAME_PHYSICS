@@ -1,10 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class PauseMenu : MonoBehaviour
+using UnityEngine.UI;
+public class PauseScript : MonoBehaviour
 {
-    public ShootingBall SB;
+    public Shooting SB;
     public GameObject pauseUI;
     public SceneFader fader;
     public GameObject menubtn;
@@ -22,14 +23,14 @@ public class PauseMenu : MonoBehaviour
         pauseUI.SetActive(!pauseUI.activeSelf);
         menubtn.SetActive(!menubtn.activeSelf);
         data.SetActive(!data.activeSelf);
-        if(SB.isPaused){
-            SB.isPaused = false;
-            Time.timeScale = 1;
-        }
-        else{
-            SB.isPaused = true;
-            Time.timeScale = 0;
-        }
+        // if(SB.isPaused){
+        //     SB.isPaused = false;
+        //     Time.timeScale = 1;
+        // }
+        // else{
+        //     SB.isPaused = true;
+        //     Time.timeScale = 0;
+        // }
     }
 
     public void Retry()
