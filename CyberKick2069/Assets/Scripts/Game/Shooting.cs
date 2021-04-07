@@ -67,6 +67,7 @@ public class Shooting : MonoBehaviour
                 rb.AddTorque (Vector3.forward, ForceMode.Force);
                 rb.AddForce(new Vector3(spawnScript.spawnedArrow.transform.forward.x, spawnScript.spawnedArrow.transform.up.y / 2, spawnScript.spawnedArrow.transform.forward.z) * finalForce, ForceMode.VelocityChange);
                 rb.AddForce(magnusForce, ForceMode.VelocityChange);
+                SoundManager.PlaySound("KickSFX");
                 spawnScript.spawnedArrow.SetActive(false);
             }
     }
