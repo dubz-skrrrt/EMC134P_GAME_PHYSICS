@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow_from: {x: 0, y: 45, z: 0}
   arrow_to: {x: 0, y: -45, z: 0}
-  arrow_speed: 1
+  arrow_speed: 0.5
 --- !u!1 &5615640342248416224
 GameObject:
   m_ObjectHideFlags: 0

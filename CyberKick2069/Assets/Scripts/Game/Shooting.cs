@@ -9,6 +9,8 @@ public class Shooting : MonoBehaviour
     Vector3 magnusForce;
     public static bool shoot;
     public static bool shootStart;
+    public static bool directionFirst;
+    public static bool forceSecond;
     private bool isGrounded;
     public static Vector3 offset = new Vector3(0f,0.2f, 0.5f);
     private Spawner spawnScript;
@@ -23,6 +25,8 @@ public class Shooting : MonoBehaviour
         rb = GameObject.FindGameObjectWithTag("soccerBall").GetComponent<Rigidbody>();
         shoot = false;
         shootStart = false;
+        directionFirst = false;
+        forceSecond = false;
     }
 
     void Update()
@@ -30,7 +34,11 @@ public class Shooting : MonoBehaviour
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
 
-        if (Input.GetKeyDown(KeyCode.Space) && !shootStart && !TimerScript.TimeRunOut){
+        if (Input.GetKeyDown(KeyCode.Space) && !TimerScript.TimeRunOut){
+            directionFirst = true;
+        }
+        if(Input.GetKeyDown(KeyCode.F) && !shootStart){
+            forceSecond = true;
             shootStart = true;
         }
        

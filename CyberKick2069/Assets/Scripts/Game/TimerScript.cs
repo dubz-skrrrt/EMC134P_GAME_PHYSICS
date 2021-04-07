@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class TimerScript : MonoBehaviour
 {
-    public static float timeRemaining = 10;
+    [SerializeField]
+    public static float timeRemaining = 60;
     public static bool TimeRunOut = false;
     
     public Text timerText;
@@ -14,7 +15,7 @@ public class TimerScript : MonoBehaviour
 
     void Start(){
         timerText.text = "" + timeRemaining;
-        timeRemaining = 10;
+        timeRemaining = 60;
         timerIsRunning = true;
     }
     void Update(){

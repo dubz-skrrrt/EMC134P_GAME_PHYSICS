@@ -21,23 +21,26 @@ public class ShootingForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveBar();
-        UpdateFillbar();
+        if (Shooting.directionFirst){
+            MoveBar();
+            UpdateFillbar();
+        }
+        
         
     }
 
     void MoveBar()
     {
-        if(!Shooting.shoot && !Shooting.shootStart) 
+        if(!Shooting.shoot && !Shooting.shootStart && !Shooting.forceSecond) 
         {
             if(powSlider.value < 1 && increaseForce) 
             {
-                powSlider.value += 0.01f;
+                powSlider.value += 0.015f;
             }
             else
             {
                 increaseForce = false;
-                powSlider.value -= 0.01f;
+                powSlider.value -= 0.015f;
 
                 if (powSlider.value <= 0)
                 {

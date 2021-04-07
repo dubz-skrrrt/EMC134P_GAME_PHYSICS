@@ -6,11 +6,12 @@ public class DirectionalArrow : MonoBehaviour
 {
     [SerializeField] private Vector3 arrow_from = new Vector3(0.0F, 45.0F, 0.0F);
     [SerializeField] private Vector3 arrow_to = new Vector3(0.0F, -45.0F, 0.0F);
-    [SerializeField] private float arrow_speed = 1.0F;
+    [SerializeField] private float arrow_speed = 0.5F;
 
  
     void Update() {
-        if (!Shooting.shoot && !Shooting.shootStart){
+        if (!Shooting.shoot && !Shooting.shootStart && !Shooting.directionFirst){
+            
             DirectionToShoot();
         }
     }
@@ -22,4 +23,6 @@ public class DirectionalArrow : MonoBehaviour
         float lerp = 0.5F * (1.0F + Mathf.Sin(Mathf.PI * Time.realtimeSinceStartup * this.arrow_speed));
         this.transform.localRotation = Quaternion.Lerp(from, to, lerp);
     }
+
+
 }
