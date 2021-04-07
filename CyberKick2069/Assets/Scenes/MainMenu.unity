@@ -316,7 +316,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 89e99ead93d973c4eada6563c78954fe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5c69e86dc8dc8364984c14f9b07c9587, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1312,6 +1312,21 @@ PrefabInstance:
       propertyPath: m_BoundingSphereOverride.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8611812133935524455, guid: 5295b8f86bf72634cbe634a15695ead9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611812133935524455, guid: 5295b8f86bf72634cbe634a15695ead9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611812133935524455, guid: 5295b8f86bf72634cbe634a15695ead9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5295b8f86bf72634cbe634a15695ead9, type: 3}
 --- !u!114 &530732127 stripped
@@ -2086,6 +2101,11 @@ PrefabInstance:
       propertyPath: circuit
       value: 
       objectReference: {fileID: 773551250}
+    - target: {fileID: 2345569863220643703, guid: 101aa9f57bf9c954c8bbbbd9f0e56ba8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -65.87
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 101aa9f57bf9c954c8bbbbd9f0e56ba8, type: 3}
 --- !u!4 &1527644520 stripped
