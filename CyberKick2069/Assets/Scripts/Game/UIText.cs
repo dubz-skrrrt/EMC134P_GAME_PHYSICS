@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIText : MonoBehaviour
 {
     public Text levelText;
-    public int level = 1;
+    public static int level = 1;
 
     // public Text numOfBallsUI;
     // public int numOfBalls = 5;
@@ -59,6 +59,7 @@ public class UIText : MonoBehaviour
     //         SceneManager.LoadScene("ResultMenu");
     //     }
     // }
+
 
     void Update()
     {

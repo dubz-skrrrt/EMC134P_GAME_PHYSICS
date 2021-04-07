@@ -32,12 +32,12 @@ public class ShootingForce : MonoBehaviour
         {
             if(powSlider.value < 1 && increaseForce) 
             {
-                powSlider.value += 0.005f;
+                powSlider.value += 0.01f;
             }
             else
             {
                 increaseForce = false;
-                powSlider.value -= 0.005f;
+                powSlider.value -= 0.01f;
 
                 if (powSlider.value <= 0)
                 {
