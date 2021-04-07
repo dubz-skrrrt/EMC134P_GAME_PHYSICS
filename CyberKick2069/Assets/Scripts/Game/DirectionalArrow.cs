@@ -10,7 +10,7 @@ public class DirectionalArrow : MonoBehaviour
 
  
     void Update() {
-        if (Shooting.shoot == false){
+        if (!Shooting.shoot && !Shooting.shootStart){
             DirectionToShoot();
         }
     }

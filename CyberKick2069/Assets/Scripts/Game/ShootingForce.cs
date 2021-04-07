@@ -23,7 +23,7 @@ public class ShootingForce : MonoBehaviour
 
     void MoveBar()
     {
-        if(Shooting.shoot == false) 
+        if(!Shooting.shoot && !Shooting.shootStart) 
         {
             if(powSlider.value < 1 && increaseForce) 
             {

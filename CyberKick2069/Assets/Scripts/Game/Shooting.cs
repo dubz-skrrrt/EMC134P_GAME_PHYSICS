@@ -8,13 +8,14 @@ public class Shooting : MonoBehaviour
     float fFactor = 1000;
     Vector3 magnusForce;
     public static bool shoot;
-    public static Vector3 offset = new Vector3(-0.1f,0, 0.5f);
+    public static bool shootStart;
+    private bool isGrounded;
+    public static Vector3 offset = new Vector3(0f,0.2f, 0.5f);
     private Spawner spawnScript;
 
     [Header("Shooting Attributes")]
     public float defaultShootingForce;
     private float finalForce;
-
 
     void Start() {
         //spawnScript.SpawnBall();
@@ -26,36 +27,63 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
+        RespawnBall();
+        if (Input.GetKeyDown(KeyCode.Space)){
+            shootStart = true;
+        }
+       
+    }
+    void FixedUpdate()
+    {
+        magnusForce = fFactor * Vector3.Cross(rb.velocity, rb.angularVelocity);
 
-        if (spawnScript.soccerBallClone.transform.position.y < 0){
+            if (!shoot && AnimScript.kickAnim){
+                shoot = true;
+                finalShootingForce();
+                rb.AddTorque (Vector3.forward, ForceMode.Force);
+                rb.AddForce(new Vector3(spawnScript.spawnedArrow.transform.forward.x, spawnScript.spawnedArrow.transform.up.y / 2, spawnScript.spawnedArrow.transform.forward.z) * finalForce, ForceMode.VelocityChange);
+                rb.AddForce(magnusForce, ForceMode.VelocityChange);
+                spawnScript.spawnedArrow.SetActive(false);
+            }
+           
+        
+        
+    }
+
+    void RespawnBall(){
+        if (isGrounded){
             Destroy(spawnScript.soccerBallClone);
             spawnScript.soccerBallClone.SetActive(false);
             Destroy(spawnScript.spawnedArrow);
+            shoot = false;
+            isGrounded = false;
+            AnimScript.kickAnim = false;
+            spawnScript.Player.transform.position = spawnScript.startPlayerPos;
+            spawnScript.Player.transform.rotation = spawnScript.startPlayerRot;
             spawnScript.SpawnBall();
             spawnScript.DirectionalArrow();
             spawnScript.soccerBallClone.SetActive(true);
             spawnScript.spawnedArrow.SetActive(true);
         }
     }
-    void FixedUpdate()
-    {
-        magnusForce = fFactor * Vector3.Cross(rb.velocity, rb.angularVelocity);
-        if (Input.GetKeyDown(KeyCode.Space)){
-            shoot = true;
-            finalShootingForce();
-            rb.AddTorque (Vector3.forward, ForceMode.Force);
-            rb.AddForce(new Vector3(spawnScript.spawnedArrow.transform.forward.x, spawnScript.spawnedArrow.transform.up.y / 2, spawnScript.spawnedArrow.transform.forward.z) * finalForce, ForceMode.VelocityChange);
-            rb.AddForce(magnusForce, ForceMode.VelocityChange);
-            spawnScript.spawnedArrow.SetActive(false);
-            
-        }
+
+    void kickBall(){
     }
-
-
     public void finalShootingForce(){
         if (shoot){
             finalForce = defaultShootingForce * ShootingForce.powSlider.value;
-            shoot = false;
+            shootStart = false;
         }
+    }
+
+    void OnCollisionEnter(Collision col){
+        if (col.gameObject.tag == "Ground" && shoot == true){
+            StartCoroutine(ResetDelay());
+        }
+    }
+
+    IEnumerator ResetDelay(){
+        yield return new WaitForSeconds(2f);
+        isGrounded = true;
     }
 }
