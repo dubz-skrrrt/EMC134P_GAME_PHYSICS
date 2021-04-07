@@ -28,6 +28,7 @@ public class Shooting : MonoBehaviour
     {
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
+
         if (Input.GetKeyDown(KeyCode.Space)){
             shootStart = true;
         }
@@ -36,18 +37,7 @@ public class Shooting : MonoBehaviour
     void FixedUpdate()
     {
         magnusForce = fFactor * Vector3.Cross(rb.velocity, rb.angularVelocity);
-
-            if (!shoot && AnimScript.kickAnim){
-                shoot = true;
-                finalShootingForce();
-                rb.AddTorque (Vector3.forward, ForceMode.Force);
-                rb.AddForce(new Vector3(spawnScript.spawnedArrow.transform.forward.x, spawnScript.spawnedArrow.transform.up.y / 2, spawnScript.spawnedArrow.transform.forward.z) * finalForce, ForceMode.VelocityChange);
-                rb.AddForce(magnusForce, ForceMode.VelocityChange);
-                spawnScript.spawnedArrow.SetActive(false);
-            }
-           
-        
-        
+        kickBall();
     }
 
     void RespawnBall(){
@@ -55,19 +45,30 @@ public class Shooting : MonoBehaviour
             Destroy(spawnScript.soccerBallClone);
             spawnScript.soccerBallClone.SetActive(false);
             Destroy(spawnScript.spawnedArrow);
+            //Resets attributes
             shoot = false;
             isGrounded = false;
             AnimScript.kickAnim = false;
             spawnScript.Player.transform.position = spawnScript.startPlayerPos;
             spawnScript.Player.transform.rotation = spawnScript.startPlayerRot;
+            //Calls Spawner
             spawnScript.SpawnBall();
             spawnScript.DirectionalArrow();
+            //Active prefabs
             spawnScript.soccerBallClone.SetActive(true);
             spawnScript.spawnedArrow.SetActive(true);
         }
     }
 
     void kickBall(){
+        if (!shoot && AnimScript.kickAnim){
+                shoot = true;
+                finalShootingForce();
+                rb.AddTorque (Vector3.forward, ForceMode.Force);
+                rb.AddForce(new Vector3(spawnScript.spawnedArrow.transform.forward.x, spawnScript.spawnedArrow.transform.up.y / 2, spawnScript.spawnedArrow.transform.forward.z) * finalForce, ForceMode.VelocityChange);
+                rb.AddForce(magnusForce, ForceMode.VelocityChange);
+                spawnScript.spawnedArrow.SetActive(false);
+            }
     }
     public void finalShootingForce(){
         if (shoot){

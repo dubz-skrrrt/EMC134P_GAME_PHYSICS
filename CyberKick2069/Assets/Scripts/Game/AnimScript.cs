@@ -19,7 +19,6 @@ public class AnimScript : MonoBehaviour
         playerAnim.SetBool("KickStart", true);
         
     }
-
     void BallShoot(){
         kickAnim = true;
     }

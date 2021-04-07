@@ -2942,6 +2942,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1290486137126466, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1316483731939146, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363371490547856, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704564119852878, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1706686233699856, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1771221962640954, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1831749432875682, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2951,6 +2975,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1875441590371598, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948169300530578, guid: c9751ce6917e9a34fa65260bace8c38a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -3123,7 +3151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dc75b984547590418b568bcfbf4ee2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelText: {fileID: 0}
+  levelText: {fileID: 1708834633}
   level: 1
 --- !u!1 &1708834631
 GameObject:
