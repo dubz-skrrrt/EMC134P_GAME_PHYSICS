@@ -5,12 +5,16 @@ using UnityEngine.UI;
 public class ShootingForce : MonoBehaviour
 {
     public static Slider powSlider;
+    private Image fill;
     private bool increaseForce = true;
+    public Color minFillColor = new Color32(0, 242, 156, 150);
+    public Color maxFillColor = new Color32(0, 255, 253, 150);
     Vector3 temp;
 
     // Start is called before the first frame update
     void Start()
     {
+        fill = GameObject.FindGameObjectWithTag("FillSlider").GetComponent<Image>();
         powSlider = GameObject.FindGameObjectWithTag("powerSlider").GetComponent<Slider>();
     }
 
@@ -18,6 +22,7 @@ public class ShootingForce : MonoBehaviour
     void Update()
     {
         MoveBar();
+        UpdateFillbar();
         
     }
 
@@ -41,5 +46,10 @@ public class ShootingForce : MonoBehaviour
             }
         }
         
+    }
+
+    void UpdateFillbar(){
+        
+        fill.color =  Color.Lerp(minFillColor, maxFillColor, powSlider.value);
     }
 }
