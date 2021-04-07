@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip ballKick;
+    public static AudioClip ballKick, timerRunOut;
     public static AudioSource audioSrc;
 
     
     void Start()
     {
         ballKick = Resources.Load<AudioClip>("KickSFX");
-
+        timerRunOut = Resources.Load<AudioClip>("TimerRunOut_Dlg");
         audioSrc = GetComponent<AudioSource>();
         
     }
@@ -27,6 +27,9 @@ public class SoundManager : MonoBehaviour
                 case "KickSFX":
                     audioSrc.PlayOneShot(ballKick);
                     break;
+                case "Timer_Dlg":
+                    audioSrc.PlayOneShot(timerRunOut);
+                break;
             }
         }
         

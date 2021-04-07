@@ -9,6 +9,7 @@ TagManager:
   - powerSlider
   - Ground
   - FillSlider
+  - SceneFader
   layers:
   - Default
   - TransparentFX
