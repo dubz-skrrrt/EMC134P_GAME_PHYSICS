@@ -25,6 +25,11 @@ public class UIText : MonoBehaviour
         levelText.text = "" + level;
     }
 
+    public void MinusLevel(){
+        level--;
+        levelText.text = "" + level;
+    }
+
     // public void DecreaseNumberOfBalls() // decrease 1 attempt
     // {
     //     numOfBalls--;

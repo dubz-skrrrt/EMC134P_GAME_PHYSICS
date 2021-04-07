@@ -31,7 +31,7 @@ public class ShootingForce : MonoBehaviour
 
     void MoveBar()
     {
-        if(!Shooting.shoot && !Shooting.shootStart && !Shooting.forceSecond) 
+        if(!Shooting.shoot && !Shooting.shootStart && !Shooting.forceSecond && TimerScript.timerIsRunning) 
         {
             if(powSlider.value < 1 && increaseForce) 
             {

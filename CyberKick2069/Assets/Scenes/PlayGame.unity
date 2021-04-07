@@ -2893,6 +2893,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c827c24f41bb1224aa742a2a9b9f2aa4, type: 3}
+--- !u!1 &1270281649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7883209836445242543, guid: e3516bcf26a90ab4b9785b5b037dd759,
+    type: 3}
+  m_PrefabInstance: {fileID: 1855278949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1363071361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3813,25 +3819,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2071818482575047606, guid: e3516bcf26a90ab4b9785b5b037dd759,
+    - target: {fileID: 1879738431, guid: e3516bcf26a90ab4b9785b5b037dd759, type: 3}
+      propertyPath: ringGoal
+      value: 
+      objectReference: {fileID: 1270281649}
+    - target: {fileID: 1879172033968016752, guid: e3516bcf26a90ab4b9785b5b037dd759,
         type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2330729773633350443, guid: e3516bcf26a90ab4b9785b5b037dd759,
         type: 3}
       propertyPath: m_Name
       value: RingGoal
-      objectReference: {fileID: 0}
-    - target: {fileID: 2330729773633350443, guid: e3516bcf26a90ab4b9785b5b037dd759,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ring
-      objectReference: {fileID: 0}
-    - target: {fileID: 2486202892238863359, guid: e3516bcf26a90ab4b9785b5b037dd759,
-        type: 3}
-      propertyPath: m_Convex
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4271320949972560118, guid: e3516bcf26a90ab4b9785b5b037dd759,
         type: 3}
@@ -3893,38 +3893,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6081195710993130052, guid: e3516bcf26a90ab4b9785b5b037dd759,
+    - target: {fileID: 6081195710993130051, guid: e3516bcf26a90ab4b9785b5b037dd759,
         type: 3}
-      propertyPath: m_Animation
-      value: 
-      objectReference: {fileID: 7400000, guid: 04b6b2c717fdec149bb86351d563d8b7, type: 2}
-    - target: {fileID: 6081195710993130052, guid: e3516bcf26a90ab4b9785b5b037dd759,
-        type: 3}
-      propertyPath: m_AnimatePhysics
-      value: 0
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6081195710993130052, guid: e3516bcf26a90ab4b9785b5b037dd759, type: 3}
+    - target: {fileID: 7362568697847696917, guid: e3516bcf26a90ab4b9785b5b037dd759,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.277
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3516bcf26a90ab4b9785b5b037dd759, type: 3}
---- !u!1 &1879738430 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2330729773633350443, guid: e3516bcf26a90ab4b9785b5b037dd759,
-    type: 3}
-  m_PrefabInstance: {fileID: 1855278949}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1879738431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1879738430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c63f4e6980c4d1418b8e3c1abeefc0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ringGoal: {fileID: 0}
 --- !u!1 &1944945202
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,18 +6,21 @@ public class GoalScript : MonoBehaviour
 {
     public GameObject ringGoal;
     public static bool goal;
+    public static bool timerReset;
     private UIText levelChange;
     void Start(){
         ringGoal = GameObject.FindGameObjectWithTag("Ring");
         levelChange = GameObject.FindGameObjectWithTag("UI").GetComponent<UIText>();
+        timerReset = false;
     }
+    
 
     void OnTriggerExit(Collider col){
-        if (col.gameObject.tag == "soccerBall"){
+        if (col.gameObject.tag == "soccerBall" && TimerScript.timerIsRunning){
             Debug.Log("level Change");
             levelChange.AddLevel();
-            TimerScript.timeRemaining = 60;
-            Debug.Log(UIText.level);
+            TimerScript.timerIsRunning = false;
+            goal = true;
         }
     }
 }
