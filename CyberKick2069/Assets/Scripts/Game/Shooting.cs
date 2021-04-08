@@ -13,13 +13,14 @@ public class Shooting : MonoBehaviour
     public static bool directionFirst;
     public static bool forceSecond;
     public static bool isPaused;
+    public static bool isGrounded;
     public static Vector3 offset = new Vector3(0,0.2f, 0.5f);
 
     [Header("References")]
     public Animation cameraAnim;
     public ParticleSystem hitFX;
     //Private var
-    private bool isGrounded;
+    
     private GameObject cam;
     
     private Vector3 startCamPos;
@@ -31,6 +32,7 @@ public class Shooting : MonoBehaviour
     private float finalForce;
 
     void Start() {
+        RespawnBall();
         spawnScript = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
         textScript = GameObject.FindGameObjectWithTag("UI").GetComponent<UIText>();
         rb = GameObject.FindGameObjectWithTag("soccerBall").GetComponent<Rigidbody>();
@@ -41,6 +43,7 @@ public class Shooting : MonoBehaviour
         shootStart = false;
         directionFirst = false;
         forceSecond = false;
+        isGrounded = false;
     }
 
     void Update()

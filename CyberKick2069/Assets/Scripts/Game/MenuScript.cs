@@ -8,6 +8,7 @@ public class MenuScript : MonoBehaviour
 {
     public SoundManager audioSFX;
     public SceneFader SF;
+    private string LevelToLoad = "PlayGame";
 
     void Start(){
 
@@ -15,7 +16,7 @@ public class MenuScript : MonoBehaviour
 
     public void PlayGame(){
         SoundManager.PlaySound("buttonClick_sfx");
-        SF.FadeToScene("PlayGame");
+        SF.FadeToScene(LevelToLoad);
     }
 
     public void QuitGame(){

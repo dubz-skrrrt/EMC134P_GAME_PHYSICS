@@ -8,6 +8,11 @@ public class PauseScript : MonoBehaviour
     public GameObject pauseUI;
     public SceneFader fader;
     public GameObject data;
+    private Spawner spawn;
+
+    void Start(){
+        spawn = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
+    }
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
@@ -37,8 +42,8 @@ public class PauseScript : MonoBehaviour
         PauseGame();
         SoundManager.PlaySound("buttonClick_sfx");
         fader.FadeToScene(SceneManager.GetActiveScene().name);
-        UIText.numOfBalls = 3;
-        UIText.level = 1;
+        Shooting.isGrounded = true;
+        Destroy(spawn.Player);
 
     }
 
@@ -47,8 +52,8 @@ public class PauseScript : MonoBehaviour
         PauseGame();
         SoundManager.PlaySound("buttonClick_sfx");
         fader.FadeToScene("MainMenu");
-        UIText.numOfBalls = 3;
-        UIText.level = 1;
+        Shooting.isGrounded = true;
+        Destroy(spawn.Player);
     }
     
 }

@@ -22,6 +22,7 @@ public class AnimScript : MonoBehaviour
             Debug.Log("No Player");
         }
         kickAnim = false;
+        playerAnim.SetBool("KickStart", false);
 
     }
     void Update(){

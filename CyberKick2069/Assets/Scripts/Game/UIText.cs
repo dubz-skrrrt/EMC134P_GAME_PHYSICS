@@ -22,8 +22,8 @@ public class UIText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // shootBtn = GameObject.FindGameObjectWithTag("ShootBtn");
-        // stopBtn = GameObject.FindGameObjectWithTag("StopBtn");
+        UIText.numOfBalls = 3;
+        UIText.level = 1;
         shootBtn.gameObject.SetActive(false);
         stopBtn.gameObject.SetActive(true);
         levelText.text = "LEVEL: " + level;
