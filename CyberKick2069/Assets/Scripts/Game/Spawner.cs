@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     public Vector3 startPlayerPos;
     public Quaternion startPlayerRot;
     
+    
     void Start(){
         Player = GameObject.FindGameObjectWithTag("Player");
         startPlayerPos = Player.transform.position;
@@ -45,4 +46,5 @@ public class Spawner : MonoBehaviour
         spawnedArrow = (GameObject)Instantiate(arrow, startPosBal, transform.rotation) as GameObject;
         
     }
+
 }
