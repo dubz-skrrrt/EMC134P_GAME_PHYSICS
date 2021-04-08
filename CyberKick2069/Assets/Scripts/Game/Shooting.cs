@@ -12,7 +12,7 @@ public class Shooting : MonoBehaviour
     public static bool directionFirst;
     public static bool forceSecond;
     private bool isGrounded;
-    public static Vector3 offset = new Vector3(0f,0.2f, 0.5f);
+    public static Vector3 offset = new Vector3(-0.1f,0.2f, 0.5f);
     private Spawner spawnScript;
 
     [Header("Shooting Attributes")]

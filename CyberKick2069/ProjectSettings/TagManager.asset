@@ -12,6 +12,7 @@ TagManager:
   - SceneFader
   - Ring
   - UI
+  - Arrow
   layers:
   - Default
   - TransparentFX

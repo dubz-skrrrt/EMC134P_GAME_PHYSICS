@@ -39,7 +39,7 @@ public class LevelDifficultyChange : MonoBehaviour
             levelChange.MinusLevel();
             TimerScript.timerIsRunning = true;
             Shooting.directionFirst = false;
-            TimerScript.ResetTimer(10f);
+            TimerScript.ResetTimer(60f);
             
         }
         else if (UIText.level == 3 && TimerScript.TimeRunOut){
@@ -47,14 +47,14 @@ public class LevelDifficultyChange : MonoBehaviour
             levelChange.MinusLevel();
             TimerScript.timerIsRunning = true;
             Shooting.directionFirst = false;
-            TimerScript.ResetTimer(10f);
+            TimerScript.ResetTimer(60f);
         }
         else if (UIText.level == 4 && TimerScript.TimeRunOut){
             TimerScript.TimeRunOut = false;
             levelChange.MinusLevel();
             TimerScript.timerIsRunning = true;
             Shooting.directionFirst = false;
-            TimerScript.ResetTimer(10f);
+            TimerScript.ResetTimer(60f);
         }
         
     }
@@ -63,19 +63,19 @@ public class LevelDifficultyChange : MonoBehaviour
         if (UIText.level == 2){
             Debug.Log("reset");
             
-            TimerScript.ResetTimer(10f);
+            TimerScript.ResetTimer(60f);
         }
         else if (UIText.level == 3){
             Debug.Log("reset");
-            TimerScript.ResetTimer(10f);
+            TimerScript.ResetTimer(60f);
         }
         else if (UIText.level == 4){
             Debug.Log("reset");
-            TimerScript.ResetTimer(10f);
+            TimerScript.ResetTimer(60f);
         }
         else if (UIText.level == 5){
             Debug.Log("reset");
-            TimerScript.ResetTimer(10f);
+            TimerScript.ResetTimer(60f);
         }
         TimerScript.timerIsRunning = true;
     }

@@ -46,8 +46,11 @@ MonoBehaviour:
   arrow: {fileID: 5341463206625430138, guid: 457be49856d6d6245ad3ece703780303, type: 3}
   soccerBall: {fileID: 8576017353464188369, guid: 0bbc88178eb582e4085a5461414cb6fc,
     type: 3}
+  ringGoal: {fileID: 2330729773633350443, guid: e3516bcf26a90ab4b9785b5b037dd759,
+    type: 3}
   spawnedArrow: {fileID: 0}
   soccerBallClone: {fileID: 0}
+  ringGoalClone: {fileID: 0}
   Player: {fileID: 0}
   startPlayerPos: {x: 0, y: 0, z: 0}
   startPlayerRot: {x: 0, y: 0, z: 0, w: 0}
