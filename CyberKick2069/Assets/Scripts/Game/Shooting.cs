@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     private Rigidbody rb;
-    float fFactor = 1000;
+    float fFactor = 100;
     Vector3 magnusForce;
     //static variables
     public static bool shoot;
@@ -67,6 +67,7 @@ public class Shooting : MonoBehaviour
     void FixedUpdate()
     {
         magnusForce = fFactor * Vector3.Cross(rb.velocity, rb.angularVelocity);
+        Debug.Log(magnusForce);
         kickBall();
     }
 
@@ -107,8 +108,9 @@ public class Shooting : MonoBehaviour
                 shoot = true;
                 finalShootingForce();
                 rb.AddTorque (Vector3.forward, ForceMode.Force);
+                rb.AddForce(magnusForce * finalForce, ForceMode.VelocityChange);
                 rb.AddForce(new Vector3(spawnScript.spawnedArrow.transform.forward.x, spawnScript.spawnedArrow.transform.up.y / 2, spawnScript.spawnedArrow.transform.forward.z) * finalForce, ForceMode.VelocityChange);
-                rb.AddForce(magnusForce, ForceMode.VelocityChange);
+                
                 SoundManager.PlaySound("KickSFX");
                 spawnScript.spawnedArrow.SetActive(false);
             }
