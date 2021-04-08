@@ -47,6 +47,8 @@ public class PauseScript : MonoBehaviour
         PauseGame();
         SoundManager.PlaySound("buttonClick_sfx");
         fader.FadeToScene("MainMenu");
+        UIText.numOfBalls = 3;
+        UIText.level = 1;
     }
     
 }

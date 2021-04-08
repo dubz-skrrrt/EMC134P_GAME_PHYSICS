@@ -14,6 +14,7 @@ public class ShootingForce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         fill = GameObject.FindGameObjectWithTag("FillSlider").GetComponent<Image>();
         powSlider = GameObject.FindGameObjectWithTag("powerSlider").GetComponent<Slider>();
     }

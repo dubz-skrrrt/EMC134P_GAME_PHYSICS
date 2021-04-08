@@ -17,6 +17,7 @@ public class TimerScript : MonoBehaviour
         timerText.text = "" + timeRemaining;
         ResetTimer(20f);
         timerIsRunning = true;
+        TimeRunOut = false;
     }
     void Update(){
         if (timerIsRunning){

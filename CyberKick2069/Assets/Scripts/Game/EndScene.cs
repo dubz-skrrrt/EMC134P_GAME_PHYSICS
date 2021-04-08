@@ -66,5 +66,7 @@ public class EndScene : MonoBehaviour
     {
         SoundManager.PlaySound("buttonClick_sfx");
         SF.FadeToScene("MainMenu");
+        UIText.numOfBalls = 3;
+        UIText.level = 1;
     }
 }
