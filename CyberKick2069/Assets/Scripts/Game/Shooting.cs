@@ -50,7 +50,7 @@ public class Shooting : MonoBehaviour
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
     
-        [#region "KeyBoardTest"]
+        
             //KeyboardTest
 
         // if (Input.GetKeyDown(KeyCode.R) && TimerScript.timerIsRunning && directionFirst){
@@ -65,7 +65,7 @@ public class Shooting : MonoBehaviour
         //     forceSecond = true;
         //     shootStart = true;
         // }
-        #endregion]
+        
         
        
     }
@@ -151,7 +151,7 @@ public class Shooting : MonoBehaviour
 
     public void Shoot(){
         if(!shootStart && directionFirst && TimerScript.timerIsRunning){
-            cameraAnim.Play("CameraZoomOutShoot");
+            //cameraAnim.Play("CameraZoomOutShoot");
             forceSecond = true;
             shootStart = true;
         }
@@ -160,4 +160,5 @@ public class Shooting : MonoBehaviour
         yield return new WaitForSeconds(2f);
         isGrounded = true;
     }
+
 }
