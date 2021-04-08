@@ -14,6 +14,7 @@ TagManager:
   - UI
   - Arrow
   - BallFX
+  - tries
   layers:
   - Default
   - TransparentFX

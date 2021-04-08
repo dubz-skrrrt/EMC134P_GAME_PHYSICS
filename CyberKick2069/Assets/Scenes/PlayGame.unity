@@ -2742,7 +2742,7 @@ GameObject:
   - component: {fileID: 1209956659}
   m_Layer: 5
   m_Name: SoccerBall3
-  m_TagString: Untagged
+  m_TagString: tries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2814,7 +2814,7 @@ Animator:
   m_GameObject: {fileID: 1209956655}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8eac714ea9ed6ae40af3aaf3d13c9eee, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23d416b6dce972f4fbf87906f0c73435, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3645,9 +3645,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelText: {fileID: 752528298}
   animation: {fileID: 752528300}
-  ballAnim1: {fileID: 1990176923}
-  ballAnim2: {fileID: 1897869216}
-  ballAnim3: {fileID: 1209956659}
+  ballAnim:
+  - {fileID: 1990176923}
+  - {fileID: 1897869216}
+  - {fileID: 1209956659}
   ballIcon:
   - {fileID: 1990176919}
   - {fileID: 1897869212}
@@ -3957,7 +3958,7 @@ GameObject:
   - component: {fileID: 1897869216}
   m_Layer: 5
   m_Name: SoccerBall2
-  m_TagString: Untagged
+  m_TagString: tries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4029,7 +4030,7 @@ Animator:
   m_GameObject: {fileID: 1897869212}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c53750d8ecb72e243b95fcb1986814e4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23d416b6dce972f4fbf87906f0c73435, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4134,7 +4135,7 @@ GameObject:
   - component: {fileID: 1990176923}
   m_Layer: 5
   m_Name: SoccerBall1
-  m_TagString: Untagged
+  m_TagString: tries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4206,7 +4207,7 @@ Animator:
   m_GameObject: {fileID: 1990176919}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 71b7ee082592f8e4dbebd8dc00daa438, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23d416b6dce972f4fbf87906f0c73435, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

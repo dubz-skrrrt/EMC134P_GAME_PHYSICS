@@ -10,9 +10,7 @@ public class UIText : MonoBehaviour
     public static int level = 1;
 
     public Animator animation;
-    public Animator ballAnim1;
-    public Animator ballAnim2;
-    public Animator ballAnim3;
+    public Animator[] ballAnim;
     
     public GameObject[] ballIcon;
     private static int numOfBalls = 3;
@@ -42,17 +40,17 @@ public class UIText : MonoBehaviour
 
         if (numOfBalls < 1)
         {
-            ballAnim1.SetTrigger("DecreaseBall1");
+            ballAnim[0].SetTrigger("DecreaseBall1");
             StartCoroutine(DelayAnim1());
         } 
         else if (numOfBalls < 2)
         {
-            ballAnim2.SetTrigger("DecreaseBall2");
+            ballAnim[1].SetTrigger("DecreaseBall2");
             StartCoroutine(DelayAnim2());
         }
         else if (numOfBalls < 3)
         {
-            ballAnim3.SetTrigger("DecreaseBall3");
+            ballAnim[2].SetTrigger("DecreaseBall3");
             StartCoroutine(DelayAnim3());
         }
 

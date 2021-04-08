@@ -67,7 +67,7 @@ public class Shooting : MonoBehaviour
     void FixedUpdate()
     {
         magnusForce = fFactor * Vector3.Cross(rb.velocity, rb.angularVelocity);
-        Debug.Log(magnusForce);
+        //Debug.Log(magnusForce);
         kickBall();
     }
 
