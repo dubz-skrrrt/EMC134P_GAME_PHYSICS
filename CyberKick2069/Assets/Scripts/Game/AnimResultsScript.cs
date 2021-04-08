@@ -8,7 +8,6 @@ public class AnimResultsScript : MonoBehaviour
     private int randCelebAnim;
     private bool randomOnce;
     void Start(){
-        playerCelebrationAnim.SetBool("Defeat", false);
         playerCelebrationAnim.SetBool("Celebrate Once", false);
         randomOnce = false;
     }
@@ -16,7 +15,9 @@ public class AnimResultsScript : MonoBehaviour
 
         if (!randomOnce){
             if (UIText.lose){
-                playerCelebrationAnim.SetBool("Defeat", true);
+                playerCelebrationAnim.SetInteger("Celebration1", 0);
+                 playerCelebrationAnim.SetBool("Celebrate Once", true);      
+                Debug.Log("Defeat");
                 UIText.lose = false;
             }
             else{

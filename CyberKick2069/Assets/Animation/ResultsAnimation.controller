@@ -144,8 +144,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Defeat
+  - m_ConditionMode: 6
+    m_ConditionEvent: Celebration1
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Celebrate Once
@@ -156,9 +156,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.44009846
   m_TransitionOffset: 0
-  m_ExitTime: 0.96710527
+  m_ExitTime: 0.11005652
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -237,12 +237,6 @@ AnimatorController:
   m_AnimatorParameters:
   - m_Name: Celebration1
     m_Type: 3
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Defeat
-    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
