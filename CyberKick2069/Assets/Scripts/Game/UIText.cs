@@ -9,25 +9,28 @@ public class UIText : MonoBehaviour
     public Text levelText;
     public static int level = 1;
 
+    public Animator animation;
+
     // public Text numOfBallsUI;
     // public int numOfBalls = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-        levelText.text = "" + level;
+        levelText.text = "LEVEL: " + level;
         //numOfBallsUI.text = "x " + numOfBalls;
     }
 
     public void AddLevel() // increase 1 level
     {
+        animation.SetTrigger("ChangeLevel");
         level++;
-        levelText.text = "" + level;
+        levelText.text = "LEVEL: " + level;
     }
 
     public void MinusLevel(){
         level--;
-        levelText.text = "" + level;
+        levelText.text = "LEVEL: " + level;
     }
 
     // public void DecreaseNumberOfBalls() // decrease 1 attempt
