@@ -105,6 +105,7 @@ public class Shooting : MonoBehaviour
         }
     }
 
+
     IEnumerator ResetDelay(){
         yield return new WaitForSeconds(2f);
         isGrounded = true;
