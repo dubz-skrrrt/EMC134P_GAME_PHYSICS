@@ -62,9 +62,9 @@ public class EndScene : MonoBehaviour
         UIText.level = 1;
     }
 
-    public void QuitGame()
+    public void Menu()
     {
         SoundManager.PlaySound("buttonClick_sfx");
-        Application.Quit();
+        SF.FadeToScene("MainMenu");
     }
 }

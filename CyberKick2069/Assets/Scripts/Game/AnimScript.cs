@@ -12,10 +12,10 @@ public class AnimScript : MonoBehaviour
     
     void Start(){
         playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        crowdAnim = GameObject.FindGameObjectWithTag("Crowd").GetComponent<Animator>();
-        if (crowdAnim !=null){
-            return;
-        }
+        crowdAnim = this.gameObject.GetComponent<Animator>();
+        // if (crowdAnim !=null){
+        //     return;
+        // }
         kickAnim = false;
 
     }

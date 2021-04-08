@@ -16,7 +16,7 @@ public class AnimResultsScript : MonoBehaviour
         if (!randomOnce){
             if (UIText.lose){
                 playerCelebrationAnim.SetInteger("Celebration1", 0);
-                 playerCelebrationAnim.SetBool("Celebrate Once", true);      
+                playerCelebrationAnim.SetBool("Celebrate Once", true);      
                 Debug.Log("Defeat");
                 UIText.lose = false;
             }
