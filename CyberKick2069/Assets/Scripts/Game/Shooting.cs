@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     private Rigidbody rb;
-    float fFactor = 1000;
+    float fFactor = 100;
     Vector3 magnusForce;
     //static variables
     public static bool shoot;
@@ -49,24 +49,30 @@ public class Shooting : MonoBehaviour
     {
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
+    
+        [#region "KeyBoardTest"]
+            //KeyboardTest
 
-        if (Input.GetKeyDown(KeyCode.R) && TimerScript.timerIsRunning && directionFirst){
-            ShootingForce.powSlider.value = 0;
-            directionFirst = false;;
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && TimerScript.timerIsRunning){
-            directionFirst = true;
-        }
-        if(Input.GetKeyDown(KeyCode.F) && !shootStart && directionFirst && TimerScript.timerIsRunning){
-            cameraAnim.Play("CameraZoomOutShoot");
-            forceSecond = true;
-            shootStart = true;
-        }
+        // if (Input.GetKeyDown(KeyCode.R) && TimerScript.timerIsRunning && directionFirst){
+        //     ShootingForce.powSlider.value = 0;
+        //     directionFirst = false;;
+        // }
+        // if (Input.GetKeyDown(KeyCode.Space) && TimerScript.timerIsRunning){
+        //     directionFirst = true;
+        // }
+        // if(Input.GetKeyDown(KeyCode.F) && !shootStart && directionFirst && TimerScript.timerIsRunning){
+        //     cameraAnim.Play("CameraZoomOutShoot");
+        //     forceSecond = true;
+        //     shootStart = true;
+        // }
+        #endregion]
+        
        
     }
     void FixedUpdate()
     {
         magnusForce = fFactor * Vector3.Cross(rb.velocity, rb.angularVelocity);
+        //Debug.Log(magnusForce);
         kickBall();
     }
 
@@ -107,8 +113,9 @@ public class Shooting : MonoBehaviour
                 shoot = true;
                 finalShootingForce();
                 rb.AddTorque (Vector3.forward, ForceMode.Force);
+                rb.AddForce(magnusForce * finalForce, ForceMode.VelocityChange);
                 rb.AddForce(new Vector3(spawnScript.spawnedArrow.transform.forward.x, spawnScript.spawnedArrow.transform.up.y / 2, spawnScript.spawnedArrow.transform.forward.z) * finalForce, ForceMode.VelocityChange);
-                rb.AddForce(magnusForce, ForceMode.VelocityChange);
+                
                 SoundManager.PlaySound("KickSFX");
                 spawnScript.spawnedArrow.SetActive(false);
             }
@@ -128,6 +135,27 @@ public class Shooting : MonoBehaviour
     }
 
 
+
+    public void StopDirection(){
+        if (TimerScript.timerIsRunning){
+            directionFirst = true;
+        }
+    }
+
+    public void RedoDirection(){
+        if (TimerScript.timerIsRunning && directionFirst){
+            ShootingForce.powSlider.value = 0;
+            directionFirst = false;;
+        }
+    }
+
+    public void Shoot(){
+        if(!shootStart && directionFirst && TimerScript.timerIsRunning){
+            cameraAnim.Play("CameraZoomOutShoot");
+            forceSecond = true;
+            shootStart = true;
+        }
+    }
     IEnumerator ResetDelay(){
         yield return new WaitForSeconds(2f);
         isGrounded = true;

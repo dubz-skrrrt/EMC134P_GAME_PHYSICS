@@ -1867,15 +1867,15 @@ RectTransform:
   m_GameObject: {fileID: 752528296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2455443, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1648833053}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -137.54797, y: -60}
-  m_SizeDelta: {x: 201.0901, y: 58.28961}
+  m_AnchoredPosition: {x: -152.85773, y: -60}
+  m_SizeDelta: {x: 180, y: 58.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &752528298
 MonoBehaviour:
@@ -2982,7 +2982,7 @@ GameObject:
   - component: {fileID: 1209956659}
   m_Layer: 5
   m_Name: SoccerBall3
-  m_TagString: Untagged
+  m_TagString: tries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3991,9 +3991,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelText: {fileID: 752528298}
   animation: {fileID: 752528300}
-  ballAnim1: {fileID: 1990176923}
-  ballAnim2: {fileID: 1897869216}
-  ballAnim3: {fileID: 1209956659}
+  ballAnim:
+  - {fileID: 1990176923}
+  - {fileID: 1897869216}
+  - {fileID: 1209956659}
   ballIcon:
   - {fileID: 1990176919}
   - {fileID: 1897869212}
@@ -4423,7 +4424,7 @@ GameObject:
   - component: {fileID: 1897869216}
   m_Layer: 5
   m_Name: SoccerBall2
-  m_TagString: Untagged
+  m_TagString: tries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4600,7 +4601,7 @@ GameObject:
   - component: {fileID: 1990176923}
   m_Layer: 5
   m_Name: SoccerBall1
-  m_TagString: Untagged
+  m_TagString: tries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
