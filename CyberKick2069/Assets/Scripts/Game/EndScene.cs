@@ -17,7 +17,6 @@ public class EndScene : MonoBehaviour
     void Start()
     {
         ResultText.text = resultTextToString;
-        Debug.Log(UIText.level);
         playOnce = false;
     }
 
@@ -35,10 +34,10 @@ public class EndScene : MonoBehaviour
         {
             SoundManager.PlaySound("Line3_Dlg");
         }
-        // else if (UIText.level == 2) 
-        // {
-        //     SoundManager.PlaySound("Line2_Dlg");
-        // }
+        else if (UIText.level == 2) 
+        {
+            SoundManager.PlaySound("Line2_Dlg");
+        }
         else if (UIText.level == 1) 
         {
             SoundManager.PlaySound("Line1_Dlg");
