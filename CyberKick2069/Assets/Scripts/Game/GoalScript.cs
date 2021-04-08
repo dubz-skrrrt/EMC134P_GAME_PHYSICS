@@ -17,10 +17,11 @@ public class GoalScript : MonoBehaviour
 
     void OnTriggerExit(Collider col){
         if (col.gameObject.tag == "soccerBall" && TimerScript.timerIsRunning){
-            Debug.Log("level Change");
+            SoundManager.PlaySound("GoalSfx");
             levelChange.AddLevel();
             TimerScript.timerIsRunning = false;
             goal = true;
         }
     }
+
 }

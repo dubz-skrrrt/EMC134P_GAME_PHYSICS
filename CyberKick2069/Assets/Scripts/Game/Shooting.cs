@@ -113,6 +113,16 @@ public class Shooting : MonoBehaviour
         if (col.gameObject.tag == "Ground" && shoot == true){
             StartCoroutine(ResetDelay());
         }
+
+        if (col.gameObject.tag == "RingMesh")
+        {
+            SoundManager.PlaySound("HitPost");
+        }
+
+        if (col.gameObject.tag == "Fence") 
+        {
+            SoundManager.PlaySound("HitFence");
+        }
     }
 
 
