@@ -2777,6 +2777,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayBTN
       objectReference: {fileID: 0}
+    - target: {fileID: 3046767068657760422, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -113.89998
+      objectReference: {fileID: 0}
     - target: {fileID: 3277489889261068244, guid: 1763375df99820d4abe185b1e4dec7cd,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3077,10 +3082,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5702225681928944969, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1839218596}
+    - target: {fileID: 5702225681928944969, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702225681928944969, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 5702225681928944972, guid: 1763375df99820d4abe185b1e4dec7cd,
         type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779736582337956561, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -46.000015
       objectReference: {fileID: 0}
     - target: {fileID: 5783992538513277065, guid: 1763375df99820d4abe185b1e4dec7cd,
         type: 3}
