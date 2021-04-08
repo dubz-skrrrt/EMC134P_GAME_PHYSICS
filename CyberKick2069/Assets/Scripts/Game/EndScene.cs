@@ -9,6 +9,7 @@ public class EndScene : MonoBehaviour
     public static string resultTextToString;
     public Text ResultText;
 
+    public bool playOnce;
     public SoundManager audioSFX;
     public SceneFader SF;
 
@@ -17,6 +18,7 @@ public class EndScene : MonoBehaviour
     {
         ResultText.text = resultTextToString;
         Debug.Log(UIText.level);
+        playOnce = false;
     }
 
     void LevelToAudio()
@@ -45,7 +47,12 @@ public class EndScene : MonoBehaviour
 
     void Update()
     {
-        LevelToAudio();
+        if(!playOnce){
+            LevelToAudio();
+            playOnce = true;
+        }
+            
+
     }
 
     public void PlayGame()
