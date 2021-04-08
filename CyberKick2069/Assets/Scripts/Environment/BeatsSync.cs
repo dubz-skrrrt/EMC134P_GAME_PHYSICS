@@ -6,17 +6,17 @@ public class BeatsSync : MonoBehaviour
 {
     public AudioSource music;
     public Animator animator;
+
+    //private Quaternion targetRot;
  
     private float MusicPos; //Position of the playback head from the last beat
     [Tooltip("Interval of the trigger")]
     public float BPM = 0;
     [Tooltip("Sample Rate")]
-    public float SampleRate = 96000;
+    public float SampleRate = 44100;
  
     void Start()
     {
-        // music = GameObject.Find("Music").GetComponent<AudioSource>();
-        // animator = GetComponent<Animator>();
         StartMusic();
     }
  
@@ -31,8 +31,9 @@ public class BeatsSync : MonoBehaviour
         
         if (music.timeSamples - MusicPos > SampleRate * (60 / BPM))
         {
-            Debug.Log("Beat");
             animator.SetTrigger("Beat");
+            // targetRot = Quaternion.Euler(0, 0, Random.Range(-10, 10));
+            // transform.rotation = Quaternion.Slerp (transform.rotation, targetRot, Time.deltaTime * MusicPos);
             MusicPos = music.timeSamples;
         }
     }
