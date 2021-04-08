@@ -19,6 +19,7 @@ TagManager:
   - StopBtn
   - RingMesh
   - Fence
+  - Enemy
   layers:
   - Default
   - TransparentFX

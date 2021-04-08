@@ -8,7 +8,7 @@ public class UIText : MonoBehaviour
 {
     public Text levelText;
     public static int level = 1;
-
+    public static bool lose;
     public GameObject shootBtn;
     public GameObject stopBtn;
     
@@ -66,29 +66,33 @@ public class UIText : MonoBehaviour
 
     void LevelResult() 
     {
-        if (level > 4) // if player finishes game with balls remaining
+        if (level > 5) // if player finishes game with balls remaining
         {
-            EndScene.resultTextToString = "You WIN! You cookin' like Steph";
+            EndScene.resultTextToString = "You WIN! GOLAAAAZOOOO! A Hat trick like Ronaldo";
             SceneManager.LoadScene("ResultMenu");
         }
         else if ((level == 4) && (numOfBalls == 0)) // if player loses all attempts in level 4
         {
-            EndScene.resultTextToString = "Almost there, you were kinda hot like Dame";
+            EndScene.resultTextToString = "Almost there, Dribbling left and right like Messi";
+            lose = true;
             SceneManager.LoadScene("ResultMenu");
         }
         else if ((level == 3) && (numOfBalls == 0)) // if player loses all attempts in level 3
         {
-            EndScene.resultTextToString = "Aw come on Kobe, show me that Mamba mentality";
+            EndScene.resultTextToString = "Just like what Maradonna said, 'When people succeed, it's because of hard work. Luck has nothing to do with success', so TRY HARDER!";
+            lose = true;
             SceneManager.LoadScene("ResultMenu");
         }
         else if ((level == 2) && (numOfBalls == 0)) // if player loses all attempts in level 2
         {
-            EndScene.resultTextToString = "Uh oh, gotta do more practice like Lebron";
+            EndScene.resultTextToString = "Everything is practice, and practice gets you closer to perfection just like Pele";
+            lose = true;
             SceneManager.LoadScene("ResultMenu");
         }
         else if ((level == 1) && (numOfBalls == 0)) // if player loses all attempts in level 1
         {
-            EndScene.resultTextToString = "You shootin' bricks? Man, you like Shaq dude";
+            EndScene.resultTextToString = "'Man you givin up?', Giving up is not found in the dictionary of Ibrahimovic";
+            lose = true;
             SceneManager.LoadScene("ResultMenu");
         }
     }
