@@ -12,6 +12,7 @@ public class Shooting : MonoBehaviour
     public static bool shootStart;
     public static bool directionFirst;
     public static bool forceSecond;
+    public static bool isPaused;
     public static Vector3 offset = new Vector3(0,0.2f, 0.5f);
 
     [Header("References")]
@@ -46,6 +47,10 @@ public class Shooting : MonoBehaviour
     {
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
+
+        if (Input.GetKeyDown(KeyCode.Escape) && Input.GetKeyDown(KeyCode.P)){
+            isPaused = true;
+        }
        
     }
     void FixedUpdate()
@@ -135,7 +140,7 @@ public class Shooting : MonoBehaviour
     }
 
     public void RedoDirection(){
-        if (TimerScript.timerIsRunning && directionFirst){
+        if (TimerScript.timerIsRunning && directionFirst && !forceSecond){
             SoundManager.PlaySound("buttonClick_sfx");
             ShootingForce.powSlider.value = 0;
             directionFirst = false;;

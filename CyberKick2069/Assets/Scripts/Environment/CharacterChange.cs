@@ -39,7 +39,6 @@ public class CharacterChange : MonoBehaviour
                 }
             }
         randCharNum = Random.Range(0, charsList.Length);
-        Debug.Log(randCharNum);
         charsList[randCharNum].gameObject.SetActive(true);
         changeOnce = false;
     }

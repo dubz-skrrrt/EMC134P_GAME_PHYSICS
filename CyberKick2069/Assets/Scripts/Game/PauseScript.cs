@@ -5,13 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class PauseScript : MonoBehaviour
 {
-    public Shooting SB;
     public GameObject pauseUI;
     public SceneFader fader;
-    public GameObject menubtn;
     public GameObject data;
-    //public GameObject PausePanel;
-
+    public GameObject directionArrow;
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
@@ -21,17 +18,18 @@ public class PauseScript : MonoBehaviour
     }
     public void PauseGame(){
         SoundManager.PlaySound("buttonClick_sfx");
+        directionArrow = GameObject.FindGameObjectWithTag("Arrow");
         pauseUI.SetActive(!pauseUI.activeSelf);
-        menubtn.SetActive(!menubtn.activeSelf);
         data.SetActive(!data.activeSelf);
-        // if(SB.isPaused){
-        //     SB.isPaused = false;
-        //     Time.timeScale = 1;
-        // }
-        // else{
-        //     SB.isPaused = true;
-        //     Time.timeScale = 0;
-        // }
+        directionArrow.SetActive(!data.activeSelf);
+        if(Shooting.isPaused){
+            Shooting.isPaused = false;
+            Time.timeScale = 1;
+        }
+        else{
+            Shooting.isPaused = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void Retry()
@@ -49,16 +47,5 @@ public class PauseScript : MonoBehaviour
         SoundManager.PlaySound("buttonClick_sfx");
         fader.FadeToScene("MainMenu");
     }
-    
-    // public void OpenPanel()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.Escape))
-    //     {
-            
-    //         PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf);
-            
-    //     }
-        
-    // }
     
 }
