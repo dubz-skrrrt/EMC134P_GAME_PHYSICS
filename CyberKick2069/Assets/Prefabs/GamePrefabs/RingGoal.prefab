@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4271320949972560118}
   - component: {fileID: 6081195710993130051}
   - component: {fileID: 1879738431}
+  - component: {fileID: 725380439}
   m_Layer: 0
   m_Name: RingGoal
   m_TagString: Ring
@@ -60,6 +61,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ringGoal: {fileID: 7883209836445242543}
+--- !u!95 &725380439
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330729773633350443}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 60015a2325f7e1e4ab1c5b057f41e4fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1885168440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,6 +166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ring Sci Fi 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883209836181223319, guid: 63f58407670b5fc499cb897b21233633,
+        type: 3}
+      propertyPath: m_TagString
+      value: RingMesh
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f58407670b5fc499cb897b21233633, type: 3}
