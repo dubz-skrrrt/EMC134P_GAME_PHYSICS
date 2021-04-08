@@ -1349,7 +1349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 175099030}
   animator: {fileID: 416297237}
-  BPM: 140
+  BPM: 142
   SampleRate: 44100
 --- !u!95 &416297237
 Animator:
