@@ -15,14 +15,14 @@ public class EndScene : MonoBehaviour
     void Start()
     {
         ResultText.text = resultTextToString;
-        UIText.numOfBalls = 3;
-        UIText.level = 1;
     }
 
     public void PlayGame()
     {
         SoundManager.PlaySound("buttonClick_sfx");
         SF.FadeToScene("PlayGame");
+        UIText.numOfBalls = 3;
+        UIText.level = 1;
     }
 
     public void QuitGame()

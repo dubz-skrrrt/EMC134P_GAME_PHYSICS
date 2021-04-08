@@ -113,6 +113,7 @@ public class UIText : MonoBehaviour
 
     void Update()
     {
+        LevelResult();
         if (Shooting.directionFirst){
             shootBtn.gameObject.SetActive(true);
             stopBtn.gameObject.SetActive(false);
