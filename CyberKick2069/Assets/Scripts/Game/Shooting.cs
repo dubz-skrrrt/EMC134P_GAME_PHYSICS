@@ -7,12 +7,22 @@ public class Shooting : MonoBehaviour
     private Rigidbody rb;
     float fFactor = 1000;
     Vector3 magnusForce;
+    //static variables
     public static bool shoot;
     public static bool shootStart;
     public static bool directionFirst;
     public static bool forceSecond;
-    private bool isGrounded;
     public static Vector3 offset = new Vector3(0,0.2f, 0.5f);
+
+    [Header("References")]
+    public Animation cameraAnim;
+    
+    public ParticleSystem hitFX;
+    //Private var
+    private bool isGrounded;
+    private GameObject cam;
+    
+    private Vector3 startCamPos;
     private Spawner spawnScript;
 
     [Header("Shooting Attributes")]
@@ -23,6 +33,10 @@ public class Shooting : MonoBehaviour
         //spawnScript.SpawnBall();
         spawnScript = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
         rb = GameObject.FindGameObjectWithTag("soccerBall").GetComponent<Rigidbody>();
+        cameraAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animation>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
+        hitFX = GameObject.FindGameObjectWithTag("BallFX").GetComponent<ParticleSystem>();
+        startCamPos = cam.transform.position;
         shoot = false;
         shootStart = false;
         directionFirst = false;
@@ -42,6 +56,7 @@ public class Shooting : MonoBehaviour
             directionFirst = true;
         }
         if(Input.GetKeyDown(KeyCode.F) && !shootStart && directionFirst && TimerScript.timerIsRunning){
+            cameraAnim.Play("CameraZoomOutShoot");
             forceSecond = true;
             shootStart = true;
         }
@@ -60,7 +75,7 @@ public class Shooting : MonoBehaviour
             spawnScript.soccerBallClone.SetActive(false);
             Destroy(spawnScript.spawnedArrow);
             //Resets attributes
-            
+            cam.transform.position = startCamPos;
             shoot = false;
             isGrounded = false;
             AnimScript.kickAnim = false;
@@ -100,6 +115,7 @@ public class Shooting : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision col){
+        hitFX.Play();
         if (col.gameObject.tag == "Ground" && shoot == true){
             StartCoroutine(ResetDelay());
         }
