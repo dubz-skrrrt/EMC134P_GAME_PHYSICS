@@ -138,12 +138,14 @@ public class Shooting : MonoBehaviour
 
     public void StopDirection(){
         if (TimerScript.timerIsRunning){
+            SoundManager.PlaySound("buttonClick_sfx");
             directionFirst = true;
         }
     }
 
     public void RedoDirection(){
         if (TimerScript.timerIsRunning && directionFirst){
+            SoundManager.PlaySound("buttonClick_sfx");
             ShootingForce.powSlider.value = 0;
             directionFirst = false;;
         }
@@ -151,6 +153,7 @@ public class Shooting : MonoBehaviour
 
     public void Shoot(){
         if(!shootStart && directionFirst && TimerScript.timerIsRunning){
+            SoundManager.PlaySound("buttonClick_sfx");
             //cameraAnim.Play("CameraZoomOutShoot");
             forceSecond = true;
             shootStart = true;
