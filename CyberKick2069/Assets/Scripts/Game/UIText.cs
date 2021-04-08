@@ -10,15 +10,18 @@ public class UIText : MonoBehaviour
     public static int level = 1;
 
     public Animator animation;
+    public Animator ballAnim1;
+    public Animator ballAnim2;
+    public Animator ballAnim3;
+    
+    public GameObject[] ballIcon;
+    private static int numOfBalls = 3;
 
-    // public Text numOfBallsUI;
-    // public int numOfBalls = 5;
 
     // Start is called before the first frame update
     void Start()
     {
         levelText.text = "LEVEL: " + level;
-        //numOfBallsUI.text = "x " + numOfBalls;
     }
 
     public void AddLevel() // increase 1 level
@@ -28,16 +31,33 @@ public class UIText : MonoBehaviour
         levelText.text = "LEVEL: " + level;
     }
 
-    public void MinusLevel(){
+    public void MinusLevel(){ // decrease 1 level
         level--;
         levelText.text = "LEVEL: " + level;
     }
 
-    // public void DecreaseNumberOfBalls() // decrease 1 attempt
-    // {
-    //     numOfBalls--;
-    //     numOfBallsUI.text = "x " + numOfBalls;
-    // }
+    public void DecreaseTries() // decrease 1 attempt
+    {
+        numOfBalls--;
+
+        if (numOfBalls < 1)
+        {
+            ballAnim1.SetTrigger("DecreaseBall1");
+            StartCoroutine(DelayAnim1());
+        } 
+        else if (numOfBalls < 2)
+        {
+            ballAnim2.SetTrigger("DecreaseBall2");
+            StartCoroutine(DelayAnim2());
+        }
+        else if (numOfBalls < 3)
+        {
+            ballAnim3.SetTrigger("DecreaseBall3");
+            StartCoroutine(DelayAnim3());
+        }
+
+        Debug.Log("Tries: " + numOfBalls);
+    }
 
     // void LevelResult() 
     // {
@@ -68,6 +88,23 @@ public class UIText : MonoBehaviour
     //     }
     // }
 
+    IEnumerator DelayAnim1()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(ballIcon[0].gameObject);
+    }
+
+    IEnumerator DelayAnim2()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(ballIcon[1].gameObject);
+    }
+
+    IEnumerator DelayAnim3()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(ballIcon[2].gameObject);
+    }
 
     void Update()
     {

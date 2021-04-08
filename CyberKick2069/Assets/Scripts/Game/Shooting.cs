@@ -14,6 +14,7 @@ public class Shooting : MonoBehaviour
     private bool isGrounded;
     public static Vector3 offset = new Vector3(0,0.2f, 0.5f);
     private Spawner spawnScript;
+    private UIText textScript;
 
     [Header("Shooting Attributes")]
     public float defaultShootingForce;
@@ -22,6 +23,7 @@ public class Shooting : MonoBehaviour
     void Start() {
         //spawnScript.SpawnBall();
         spawnScript = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
+        textScript = GameObject.FindGameObjectWithTag("UI").GetComponent<UIText>();
         rb = GameObject.FindGameObjectWithTag("soccerBall").GetComponent<Rigidbody>();
         shoot = false;
         shootStart = false;
@@ -72,6 +74,10 @@ public class Shooting : MonoBehaviour
                 Debug.Log("Reset true");
                 GoalScript.timerReset = true;
                 TimerScript.TimeRunOut = false;
+            } 
+            else 
+            {
+                textScript.DecreaseTries();
             }
             spawnScript.SpawnBall();
             spawnScript.DirectionalArrow();
