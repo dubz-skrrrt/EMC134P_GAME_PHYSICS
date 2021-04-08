@@ -70,6 +70,7 @@ public class UIText : MonoBehaviour
         {
             EndScene.resultTextToString = "You WIN! GOLAAAAZOOOO! A Hat trick like Ronaldo";
             SceneManager.LoadScene("ResultMenu");
+            
         }
         else if ((level == 4) && (numOfBalls == 0)) // if player loses all attempts in level 4
         {
