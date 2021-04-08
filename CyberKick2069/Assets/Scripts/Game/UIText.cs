@@ -66,7 +66,7 @@ public class UIText : MonoBehaviour
 
     void LevelResult() 
     {
-        if (level > 5) // if player finishes game with balls remaining
+        if (level > 4) // if player finishes game with balls remaining
         {
             EndScene.resultTextToString = "You WIN! GOLAAAAZOOOO! A Hat trick like Ronaldo";
             SceneManager.LoadScene("ResultMenu");
