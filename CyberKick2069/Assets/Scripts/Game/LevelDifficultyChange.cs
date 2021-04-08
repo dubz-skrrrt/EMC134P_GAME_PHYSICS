@@ -6,10 +6,14 @@ public class LevelDifficultyChange : MonoBehaviour
 {
     private SceneFader fader;
     private UIText levelChange;
+    public GameObject Enemy;
+    public Animator[] EnemyAnims;
+
     void Start()
     {
-         fader = GameObject.FindGameObjectWithTag("SceneFader").GetComponent<SceneFader>();
-         levelChange = GameObject.FindGameObjectWithTag("UI").GetComponent<UIText>();
+        fader = GameObject.FindGameObjectWithTag("SceneFader").GetComponent<SceneFader>();
+        levelChange = GameObject.FindGameObjectWithTag("UI").GetComponent<UIText>();
+        //EnemyAnims = GameObject.Find("Obstacles").GetComponentsInChildren<Animator>(true);
     }
 
     
@@ -18,6 +22,9 @@ public class LevelDifficultyChange : MonoBehaviour
         if (TimerScript.TimeRunOut){
             DecreaselevelDifficulty();
         }
+        
+    }
+    void LateUpdate(){
         if (GoalScript.goal && GoalScript.timerReset){
             Debug.Log("Check");
             GoalScript.goal = false;
@@ -61,8 +68,24 @@ public class LevelDifficultyChange : MonoBehaviour
 
     void IncreaseLevelDifficulty(){
         if (UIText.level == 2){
-            Debug.Log("reset");
-            
+            for (int i = 0; i < EnemyAnims.Length; i++)
+            {
+                EnemyAnims[i].gameObject.SetActive(true);
+                if (i == 0){
+                    EnemyAnims[i].speed = i +1 *0.5f;
+                }else{
+                    EnemyAnims[i].speed = i*0.5f;
+                }
+                
+
+                if (i%2 == 0){
+                    EnemyAnims[i].SetInteger("Dir", 1);
+                }
+                else{
+                    EnemyAnims[i].SetInteger("Dir", 0);
+                }
+                
+            }
             TimerScript.ResetTimer(60f);
         }
         else if (UIText.level == 3){
