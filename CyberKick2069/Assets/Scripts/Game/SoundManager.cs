@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip ballKick, btnClick, timerRunOut;
+    public static AudioClip ballKick, btnClick, timerRunOut, goalSFX, hitPost, hitFence;
     public static AudioSource audioSrc;
 
     
@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
         ballKick = Resources.Load<AudioClip>("KickSFX");
         btnClick = Resources.Load<AudioClip>("buttonClick_sfx");
         timerRunOut = Resources.Load<AudioClip>("TimerRunOut_Dlg");
+        goalSFX = Resources.Load<AudioClip>("GoalSfx");
+        hitPost = Resources.Load<AudioClip>("HitPost");
+        hitFence = Resources.Load<AudioClip>("HitFence");
         
         audioSrc = GetComponent<AudioSource>();
         
@@ -34,6 +37,15 @@ public class SoundManager : MonoBehaviour
                     break;
                 case "Timer_Dlg":
                     audioSrc.PlayOneShot(timerRunOut);
+                    break;
+                case "GoalSfx":
+                    audioSrc.PlayOneShot(goalSFX);
+                    break;
+                case "HitPost":
+                    audioSrc.PlayOneShot(hitPost);
+                    break;
+                case "HitFence":
+                    audioSrc.PlayOneShot(hitFence);
                     break;
             }
         }

@@ -17,6 +17,8 @@ TagManager:
   - tries
   - Shootbtn
   - StopBtn
+  - RingMesh
+  - Fence
   layers:
   - Default
   - TransparentFX
