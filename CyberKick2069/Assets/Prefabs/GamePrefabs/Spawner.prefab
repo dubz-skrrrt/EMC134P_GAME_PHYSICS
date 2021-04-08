@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ebc707e84d6c7449cdea3110cc7172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cheerSquad: {fileID: 4998175063195939747, guid: 84d5c9a308f39314abbd8ae8f2699a49,
+    type: 3}
   arrow: {fileID: 5341463206625430138, guid: 457be49856d6d6245ad3ece703780303, type: 3}
   soccerBall: {fileID: 2836659310491150381, guid: 0bbc88178eb582e4085a5461414cb6fc,
     type: 3}

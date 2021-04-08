@@ -21,7 +21,7 @@ TagManager:
   - Fence
   - Enemy
   - Music
-  - PauseUI
+  - Crowd
   layers:
   - Default
   - TransparentFX

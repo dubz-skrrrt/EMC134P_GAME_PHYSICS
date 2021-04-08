@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a62b79263188474c8b4523acf2f730b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crowdAnim: {fileID: 0}
 --- !u!1001 &228900488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3144,6 +3145,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2818558750157371147, guid: f3f095433613be043b0e4714481f049b,
+        type: 3}
+      propertyPath: cheerSquad
+      value: 
+      objectReference: {fileID: 4998175063195939747, guid: 84d5c9a308f39314abbd8ae8f2699a49,
+        type: 3}
     - target: {fileID: 5540004415026800140, guid: f3f095433613be043b0e4714481f049b,
         type: 3}
       propertyPath: m_RootOrder
