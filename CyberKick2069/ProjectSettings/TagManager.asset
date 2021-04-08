@@ -13,6 +13,7 @@ TagManager:
   - Ring
   - UI
   - Arrow
+  - BallFX
   layers:
   - Default
   - TransparentFX
