@@ -9,6 +9,9 @@ public class UIText : MonoBehaviour
     public Text levelText;
     public static int level = 1;
 
+    public GameObject shootBtn;
+    public GameObject stopBtn;
+    
     public Animator animation;
     public Animator[] ballAnim;
     
@@ -19,6 +22,10 @@ public class UIText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // shootBtn = GameObject.FindGameObjectWithTag("ShootBtn");
+        // stopBtn = GameObject.FindGameObjectWithTag("StopBtn");
+        shootBtn.gameObject.SetActive(false);
+        stopBtn.gameObject.SetActive(true);
         levelText.text = "LEVEL: " + level;
     }
 
@@ -106,6 +113,12 @@ public class UIText : MonoBehaviour
 
     void Update()
     {
-        LevelResult();
+        if (Shooting.directionFirst){
+            shootBtn.gameObject.SetActive(true);
+            stopBtn.gameObject.SetActive(false);
+        }else{
+            shootBtn.gameObject.SetActive(false);
+            stopBtn.gameObject.SetActive(true);
+        }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4031961534693746553
+--- !u!1 &2836659310491150381
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,57 +8,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5054514092609412546}
-  - component: {fileID: 2192437717718087847}
-  m_Layer: 0
-  m_Name: SoccerBallHalo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5054514092609412546
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4031961534693746553}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.113626435, z: -0.0043703476}
-  m_LocalScale: {x: 0.87404954, y: 0.87404954, z: 0.87404954}
-  m_Children: []
-  m_Father: {fileID: 2047708890101715497}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!122 &2192437717718087847
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4031961534693746553}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4294246144
-  m_Size: 0.2
---- !u!1 &8576017353464188369
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2047708890101715497}
-  - component: {fileID: 3723626068947195535}
-  - component: {fileID: 1205179568202288394}
-  - component: {fileID: 4749160185264996762}
-  - component: {fileID: 2090016747287596127}
-  - component: {fileID: 439994417642850079}
-  - component: {fileID: 7065420576060637630}
-  - component: {fileID: 398991568}
+  - component: {fileID: 5490759478777001941}
+  - component: {fileID: 7202679582226117491}
+  - component: {fileID: 4674838306598496502}
+  - component: {fileID: 1274972533847139430}
+  - component: {fileID: 5573433159825058211}
+  - component: {fileID: 6215768282502357731}
+  - component: {fileID: 3626697671116596290}
+  - component: {fileID: 5789927924613809452}
   m_Layer: 0
   m_Name: SoccerBallMesh
   m_TagString: soccerBall
@@ -66,37 +23,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2047708890101715497
+--- !u!4 &5490759478777001941
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.567, y: 0.5, z: 7.202}
   m_LocalScale: {x: 1.1441, y: 1.1441, z: 1.1441}
   m_Children:
-  - {fileID: 5054514092609412546}
-  - {fileID: 1345656417958355100}
+  - {fileID: 1620391023488284734}
+  - {fileID: 4824850144213157216}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3723626068947195535
+--- !u!33 &7202679582226117491
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   m_Mesh: {fileID: -5922747794050181559, guid: 787dd87e79854924b90b7a5ad4c01d5d, type: 3}
---- !u!23 &1205179568202288394
+--- !u!23 &4674838306598496502
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -132,13 +89,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4749160185264996762
+--- !u!54 &1274972533847139430
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -148,41 +105,44 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &2090016747287596127
+--- !u!135 &5573433159825058211
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   m_Material: {fileID: 13400000, guid: 9a8c5057d2d0f3247ae9d70e45150d14, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.11264125
   m_Center: {x: 0.0035492554, y: 0.11247295, z: 0.0013294816}
---- !u!114 &439994417642850079
+--- !u!114 &6215768282502357731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d68b58c9cf868cc45ba790cb9adc9d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cameraAnim: {fileID: 0}
-  hitFX: {fileID: 1188132678147218428}
+  shootBtn: {fileID: 1518542498515906386, guid: 7aad133fd6731c04d9b313a2a0068eda,
+    type: 3}
+  stopBtn: {fileID: 2579122343313445540, guid: a4e6dfced2a28ef47babe67e7b395cb1, type: 3}
+  hitFX: {fileID: 4622079312085859840}
   defaultShootingForce: 20
---- !u!114 &7065420576060637630
+--- !u!114 &3626697671116596290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 230c1b23e9b6c634d95c335fd5aff44d, type: 3}
@@ -190,14 +150,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFillColor: {r: 0, g: 0.9490196, b: 0.6117647, a: 0.5882353}
   maxFillColor: {r: 0, g: 1, b: 0.99215686, a: 0.5882353}
---- !u!96 &398991568
+--- !u!96 &5789927924613809452
 TrailRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576017353464188369}
+  m_GameObject: {fileID: 2836659310491150381}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -298,12 +258,55 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!1001 &1349972726796371272
+--- !u!1 &7470789407017337477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1620391023488284734}
+  - component: {fileID: 5635391514477698395}
+  m_Layer: 0
+  m_Name: SoccerBallHalo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1620391023488284734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470789407017337477}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.113626435, z: -0.0043703476}
+  m_LocalScale: {x: 0.87404954, y: 0.87404954, z: 0.87404954}
+  m_Children: []
+  m_Father: {fileID: 5490759478777001941}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!122 &5635391514477698395
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470789407017337477}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294246144
+  m_Size: 0.2
+--- !u!1001 &4820511655930192052
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2047708890101715497}
+    m_TransformParent: {fileID: 5490759478777001941}
     m_Modifications:
     - target: {fileID: 1319638081725528, guid: 2974555caa7a6704eb8f549d99367f35, type: 3}
       propertyPath: m_Name
@@ -376,15 +379,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2974555caa7a6704eb8f549d99367f35, type: 3}
---- !u!4 &1345656417958355100 stripped
+--- !u!4 &4824850144213157216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4690976350676436, guid: 2974555caa7a6704eb8f549d99367f35,
     type: 3}
-  m_PrefabInstance: {fileID: 1349972726796371272}
+  m_PrefabInstance: {fileID: 4820511655930192052}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &1188132678147218428 stripped
+--- !u!198 &4622079312085859840 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198450213073346228, guid: 2974555caa7a6704eb8f549d99367f35,
     type: 3}
-  m_PrefabInstance: {fileID: 1349972726796371272}
+  m_PrefabInstance: {fileID: 4820511655930192052}
   m_PrefabAsset: {fileID: 0}

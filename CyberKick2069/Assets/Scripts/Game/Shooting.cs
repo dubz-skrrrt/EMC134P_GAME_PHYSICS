@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Shooting : MonoBehaviour
 {
     private Rigidbody rb;
@@ -16,7 +16,6 @@ public class Shooting : MonoBehaviour
 
     [Header("References")]
     public Animation cameraAnim;
-    
     public ParticleSystem hitFX;
     //Private var
     private bool isGrounded;
@@ -31,11 +30,9 @@ public class Shooting : MonoBehaviour
     private float finalForce;
 
     void Start() {
-        //spawnScript.SpawnBall();
         spawnScript = GameObject.FindGameObjectWithTag("Spawner").GetComponent<Spawner>();
         textScript = GameObject.FindGameObjectWithTag("UI").GetComponent<UIText>();
         rb = GameObject.FindGameObjectWithTag("soccerBall").GetComponent<Rigidbody>();
-        cameraAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animation>();
         cam = GameObject.FindGameObjectWithTag("MainCamera");
         hitFX = GameObject.FindGameObjectWithTag("BallFX").GetComponent<ParticleSystem>();
         startCamPos = cam.transform.position;
@@ -49,24 +46,6 @@ public class Shooting : MonoBehaviour
     {
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
-    
-        
-            //KeyboardTest
-
-        // if (Input.GetKeyDown(KeyCode.R) && TimerScript.timerIsRunning && directionFirst){
-        //     ShootingForce.powSlider.value = 0;
-        //     directionFirst = false;;
-        // }
-        // if (Input.GetKeyDown(KeyCode.Space) && TimerScript.timerIsRunning){
-        //     directionFirst = true;
-        // }
-        // if(Input.GetKeyDown(KeyCode.F) && !shootStart && directionFirst && TimerScript.timerIsRunning){
-        //     cameraAnim.Play("CameraZoomOutShoot");
-        //     forceSecond = true;
-        //     shootStart = true;
-        // }
-        
-        
        
     }
     void FixedUpdate()
@@ -100,6 +79,8 @@ public class Shooting : MonoBehaviour
             {
                 textScript.DecreaseTries();
             }
+            textScript.shootBtn.gameObject.SetActive(false);
+            textScript.stopBtn.gameObject.SetActive(true);
             spawnScript.SpawnBall();
             spawnScript.DirectionalArrow();
             //Active prefabs
@@ -153,8 +134,9 @@ public class Shooting : MonoBehaviour
 
     public void Shoot(){
         if(!shootStart && directionFirst && TimerScript.timerIsRunning){
+            cameraAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animation>();
             SoundManager.PlaySound("buttonClick_sfx");
-            //cameraAnim.Play("CameraZoomOutShoot");
+            cameraAnim.Play("CameraZoomOutShoot");
             forceSecond = true;
             shootStart = true;
         }
