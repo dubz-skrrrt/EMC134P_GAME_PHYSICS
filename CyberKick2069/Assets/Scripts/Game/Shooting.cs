@@ -136,6 +136,7 @@ public class Shooting : MonoBehaviour
         if (TimerScript.timerIsRunning){
             SoundManager.PlaySound("buttonClick_sfx");
             directionFirst = true;
+            DirectionalArrow.isMoving = false;
         }
     }
 
@@ -143,7 +144,8 @@ public class Shooting : MonoBehaviour
         if (TimerScript.timerIsRunning && directionFirst && !forceSecond){
             SoundManager.PlaySound("buttonClick_sfx");
             ShootingForce.powSlider.value = 0;
-            directionFirst = false;;
+            directionFirst = false;
+            DirectionalArrow.isMoving = true;
         }
     }
 

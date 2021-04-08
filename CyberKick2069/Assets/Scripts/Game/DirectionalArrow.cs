@@ -8,9 +8,13 @@ public class DirectionalArrow : MonoBehaviour
     [SerializeField] private Vector3 arrow_to = new Vector3(0.0F, -45.0F, 0.0F);
     [SerializeField] private float arrow_speed = 0.5F;
 
+    public static bool isMoving;
  
+    void Start(){
+        isMoving = true;
+    }
     void Update() {
-        if (!Shooting.shoot && !Shooting.shootStart && !Shooting.directionFirst && TimerScript.timerIsRunning){
+        if (!Shooting.shoot && !Shooting.shootStart && !Shooting.directionFirst && TimerScript.timerIsRunning && isMoving){
             
             DirectionToShoot();
         }

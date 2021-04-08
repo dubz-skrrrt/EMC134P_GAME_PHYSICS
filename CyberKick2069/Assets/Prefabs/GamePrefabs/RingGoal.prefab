@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6081195710993130051}
   - component: {fileID: 1879738431}
   - component: {fileID: 725380439}
+  - component: {fileID: 9038332107589251746}
   m_Layer: 0
   m_Name: RingGoal
   m_TagString: Ring
@@ -80,6 +81,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &9038332107589251746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330729773633350443}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.08, y: 1.02, z: 0.1}
+  m_Center: {x: 0, y: 0.9, z: 0.18}
 --- !u!1001 &1885168440
 PrefabInstance:
   m_ObjectHideFlags: 0

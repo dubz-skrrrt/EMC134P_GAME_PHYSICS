@@ -13,11 +13,13 @@ public class AnimScript : MonoBehaviour
     void Start(){
         playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         crowdAnim = this.gameObject.GetComponent<Animator>();
-        if (crowdAnim ==null){
+        if (crowdAnim !=null){
             return;
         }
-        if (playerAnim ==null){
+        if (playerAnim !=null){
             return;
+        }else{
+            Debug.Log("No Player");
         }
         kickAnim = false;
 
