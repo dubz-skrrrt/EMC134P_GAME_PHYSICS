@@ -10,6 +10,7 @@ public class PauseScript : MonoBehaviour
     public SceneFader fader;
     public GameObject menubtn;
     public GameObject data;
+    //public GameObject PausePanel;
 
     void Update ()
     {
@@ -48,4 +49,16 @@ public class PauseScript : MonoBehaviour
         SoundManager.PlaySound("buttonClick_sfx");
         fader.FadeToScene("MainMenu");
     }
+    
+    // public void OpenPanel()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.Escape))
+    //     {
+            
+    //         PausePanel.gameObject.SetActive(!PausePanel.gameObject.activeSelf);
+            
+    //     }
+        
+    // }
+    
 }
