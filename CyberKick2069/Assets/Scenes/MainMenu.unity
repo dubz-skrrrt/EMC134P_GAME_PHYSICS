@@ -2797,6 +2797,26 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.6624
       objectReference: {fileID: 0}
+    - target: {fileID: 3277489889261068244, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277489889261068244, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277489889261068244, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277489889261068244, guid: 1763375df99820d4abe185b1e4dec7cd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3957685351329679712, guid: 1763375df99820d4abe185b1e4dec7cd,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
