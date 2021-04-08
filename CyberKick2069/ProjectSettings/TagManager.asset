@@ -17,6 +17,7 @@ TagManager:
   - tries
   - Shootbtn
   - StopBtn
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class AnimScript : MonoBehaviour
     void Start(){
         playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         kickAnim = false;
+
     }
     void Update(){
         if (Shooting.shootStart){
