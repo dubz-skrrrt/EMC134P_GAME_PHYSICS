@@ -51,7 +51,7 @@ public class Shooting : MonoBehaviour
         spawnScript.spawnedArrow.transform.position = rb.transform.position +offset;
         RespawnBall();
 
-        if (Input.GetKeyDown(KeyCode.Escape) && Input.GetKeyDown(KeyCode.P)){
+        if (Input.GetKeyDown(KeyCode.Escape) && Input.GetKeyDown(KeyCode.P) && !UIText.lose){
             isPaused = true;
         }
        

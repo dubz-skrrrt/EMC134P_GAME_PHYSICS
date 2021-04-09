@@ -8,12 +8,15 @@ public class LevelDifficultyChange : MonoBehaviour
     private UIText levelChange;
     public Animator RingGoal;
     public Animator[] EnemyAnims;
+    public Vector3[] startPos;
     void Start()
     {
         fader = GameObject.FindGameObjectWithTag("SceneFader").GetComponent<SceneFader>();
         levelChange = GameObject.FindGameObjectWithTag("UI").GetComponent<UIText>();
-       // RingGoal = GameObject.FindGameObjectWithTag("Ring").GetComponent<Animator>();
-        //EnemyAnims = GameObject.Find("Obstacles").GetComponentsInChildren<Animator>(true);
+        for (int i = 0; i < EnemyAnims.Length; i++)
+            {
+                startPos[i] = EnemyAnims[i].transform.position;
+            }
     }
 
     
@@ -46,13 +49,16 @@ public class LevelDifficultyChange : MonoBehaviour
             for (int i = 0; i < EnemyAnims.Length; i++)
             {
                  if (i%2 == 0){
+                    EnemyAnims[i].transform.position = startPos[i];
                     EnemyAnims[i].gameObject.SetActive(false);
+                }else{
                 }
                
             }
             levelChange.MinusLevel();
             TimerScript.timerIsRunning = true;
             Shooting.directionFirst = false;
+            DirectionalArrow.isMoving = true;
             TimerScript.ResetTimer(20f);
             
         }
@@ -61,8 +67,9 @@ public class LevelDifficultyChange : MonoBehaviour
             for (int i = 0; i < EnemyAnims.Length; i++)
             {
                  if (i%2 == 0){
-                    
+                    EnemyAnims[i].transform.position = startPos[i];
                 }else{
+                    EnemyAnims[i].transform.position = startPos[i];
                     EnemyAnims[i].gameObject.SetActive(false);
                 }
                
@@ -74,6 +81,11 @@ public class LevelDifficultyChange : MonoBehaviour
             TimerScript.ResetTimer(20f);
         }
         else if (UIText.level == 4 && TimerScript.TimeRunOut){
+            TimerScript.TimeRunOut = false;
+            for (int i = 0; i < EnemyAnims.Length; i++)
+            {
+                EnemyAnims[i].transform.position = startPos[i];
+            }
             TimerScript.TimeRunOut = false;
             levelChange.MinusLevel();
             TimerScript.timerIsRunning = true;
@@ -95,14 +107,14 @@ public class LevelDifficultyChange : MonoBehaviour
                     EnemyAnims[i].speed = i*0.5f;
                 }
                 
-
+                
                 if (i%2 == 0){
                     EnemyAnims[i].SetInteger("Dir", 1);
                     EnemyAnims[i].gameObject.SetActive(true);
                 }
                 else{
                     EnemyAnims[i].SetInteger("Dir", 0);
-                   
+                    
                 }
                 
             }
@@ -120,7 +132,7 @@ public class LevelDifficultyChange : MonoBehaviour
 
                 if (i%2 == 0){
                     EnemyAnims[i].SetInteger("Dir", 1);
-                    
+                   
                 }
                 else{
                     EnemyAnims[i].SetInteger("Dir", 0);

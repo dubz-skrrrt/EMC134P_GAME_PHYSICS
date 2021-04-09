@@ -12,7 +12,7 @@ public class UIText : MonoBehaviour
     public GameObject shootBtn;
     public GameObject stopBtn;
     
-    public Animator anim;
+    public Animator animationLevel;
     public Animator[] ballAnim;
     
     public GameObject[] ballIcon;
@@ -31,7 +31,7 @@ public class UIText : MonoBehaviour
 
     public void AddLevel() // increase 1 level
     {
-        anim.SetTrigger("ChangeLevel");
+        animationLevel.SetTrigger("ChangeLevel");
         level++;
         levelText.text = "LEVEL: " + level;
     }
