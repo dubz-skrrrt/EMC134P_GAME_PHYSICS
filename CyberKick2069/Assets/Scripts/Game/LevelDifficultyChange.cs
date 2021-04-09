@@ -67,7 +67,7 @@ public class LevelDifficultyChange : MonoBehaviour
             for (int i = 0; i < EnemyAnims.Length; i++)
             {
                  if (i%2 == 0){
-                    EnemyAnims[i].transform.position = startPos[i];
+                    
                 }else{
                     EnemyAnims[i].transform.position = startPos[i];
                     EnemyAnims[i].gameObject.SetActive(false);
@@ -82,10 +82,6 @@ public class LevelDifficultyChange : MonoBehaviour
         }
         else if (UIText.level == 4 && TimerScript.TimeRunOut){
             TimerScript.TimeRunOut = false;
-            for (int i = 0; i < EnemyAnims.Length; i++)
-            {
-                EnemyAnims[i].transform.position = startPos[i];
-            }
             TimerScript.TimeRunOut = false;
             levelChange.MinusLevel();
             TimerScript.timerIsRunning = true;
